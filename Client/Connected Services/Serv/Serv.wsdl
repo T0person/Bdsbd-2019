@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Serv" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IServ_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServ_LoginForm_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginForm" />
+  </wsdl:message>
+  <wsdl:message name="IServ_LoginForm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_LoginForm_load_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginForm_load" />
+  </wsdl:message>
+  <wsdl:message name="IServ_LoginForm_load_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginForm_loadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Fac_find_stud_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fac_find_stud" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Fac_find_stud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fac_find_studResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Spec_find_stud_InputMessage">
+    <wsdl:part name="parameters" element="tns:Spec_find_stud" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Spec_find_stud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Spec_find_studResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Sal_find_stud_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sal_find_stud" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Sal_find_stud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Sal_find_studResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Take_table_InputMessage">
+    <wsdl:part name="parameters" element="tns:Take_table" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Take_table_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Take_tableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Take_rows_InputMessage">
+    <wsdl:part name="parameters" element="tns:Take_rows" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Take_rows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Take_rowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Update_table_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_table" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Update_table_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_tableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Delete_table_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_table" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Delete_table_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_tableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Top_Sal_InputMessage">
+    <wsdl:part name="parameters" element="tns:Top_Sal" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Top_Sal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Top_SalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Exit_to_del_InputMessage">
+    <wsdl:part name="parameters" element="tns:Exit_to_del" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Exit_to_del_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Exit_to_delResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Insert_Online_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_Online" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Insert_Online_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_OnlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Delete_Online_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Online" />
+  </wsdl:message>
+  <wsdl:message name="IServ_Delete_Online_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_OnlineResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServ">
+    <wsdl:operation name="LoginForm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/LoginForm" message="tns:IServ_LoginForm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/LoginFormResponse" message="tns:IServ_LoginForm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginForm_load">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/LoginForm_load" message="tns:IServ_LoginForm_load_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/LoginForm_loadResponse" message="tns:IServ_LoginForm_load_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fac_find_stud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Fac_find_stud" message="tns:IServ_Fac_find_stud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Fac_find_studResponse" message="tns:IServ_Fac_find_stud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Spec_find_stud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Spec_find_stud" message="tns:IServ_Spec_find_stud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Spec_find_studResponse" message="tns:IServ_Spec_find_stud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sal_find_stud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Sal_find_stud" message="tns:IServ_Sal_find_stud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Sal_find_studResponse" message="tns:IServ_Sal_find_stud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Take_table">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_table" message="tns:IServ_Take_table_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_tableResponse" message="tns:IServ_Take_table_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Take_rows">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_rows" message="tns:IServ_Take_rows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_rowsResponse" message="tns:IServ_Take_rows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_table">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Update_table" message="tns:IServ_Update_table_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Update_tableResponse" message="tns:IServ_Update_table_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_table">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Delete_table" message="tns:IServ_Delete_table_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Delete_tableResponse" message="tns:IServ_Delete_table_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Top_Sal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Top_Sal" message="tns:IServ_Top_Sal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Top_SalResponse" message="tns:IServ_Top_Sal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Exit_to_del">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Exit_to_del" message="tns:IServ_Exit_to_del_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Exit_to_delResponse" message="tns:IServ_Exit_to_del_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Online">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Insert_Online" message="tns:IServ_Insert_Online_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Insert_OnlineResponse" message="tns:IServ_Insert_Online_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Online">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Delete_Online" message="tns:IServ_Delete_Online_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Delete_OnlineResponse" message="tns:IServ_Delete_Online_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServ" type="tns:IServ">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoginForm">
+      <soap:operation soapAction="http://tempuri.org/IServ/LoginForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginForm_load">
+      <soap:operation soapAction="http://tempuri.org/IServ/LoginForm_load" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fac_find_stud">
+      <soap:operation soapAction="http://tempuri.org/IServ/Fac_find_stud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Spec_find_stud">
+      <soap:operation soapAction="http://tempuri.org/IServ/Spec_find_stud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sal_find_stud">
+      <soap:operation soapAction="http://tempuri.org/IServ/Sal_find_stud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Take_table">
+      <soap:operation soapAction="http://tempuri.org/IServ/Take_table" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Take_rows">
+      <soap:operation soapAction="http://tempuri.org/IServ/Take_rows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_table">
+      <soap:operation soapAction="http://tempuri.org/IServ/Update_table" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_table">
+      <soap:operation soapAction="http://tempuri.org/IServ/Delete_table" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Top_Sal">
+      <soap:operation soapAction="http://tempuri.org/IServ/Top_Sal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exit_to_del">
+      <soap:operation soapAction="http://tempuri.org/IServ/Exit_to_del" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Online">
+      <soap:operation soapAction="http://tempuri.org/IServ/Insert_Online" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Online">
+      <soap:operation soapAction="http://tempuri.org/IServ/Delete_Online" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IServ" type="tns:IServ">
+    <wsp:PolicyReference URI="#NetTcpBinding_IServ_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="LoginForm">
+      <soap12:operation soapAction="http://tempuri.org/IServ/LoginForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginForm_load">
+      <soap12:operation soapAction="http://tempuri.org/IServ/LoginForm_load" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fac_find_stud">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Fac_find_stud" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Spec_find_stud">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Spec_find_stud" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sal_find_stud">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Sal_find_stud" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Take_table">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Take_table" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Take_rows">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Take_rows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_table">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Update_table" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_table">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Delete_table" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Top_Sal">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Top_Sal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exit_to_del">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Exit_to_del" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Online">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Insert_Online" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Online">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Delete_Online" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Serv">
+    <wsdl:port name="BasicHttpBinding_IServ" binding="tns:BasicHttpBinding_IServ">
+      <soap:address location="http://localhost:8080/Serv" />
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IServ" binding="tns:NetTcpBinding_IServ">
+      <soap12:address location="net.tcp://localhost:3307/Serv" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:3307/Serv</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-L1EDO92\Данил</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
