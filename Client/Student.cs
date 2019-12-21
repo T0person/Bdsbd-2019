@@ -39,27 +39,27 @@ namespace Client
         private void Find_fac_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            Fac.Text = client.Fac_find_stud(Convert.ToString(Settings.Default["id"]));
+            Fac.Text = client.Fac_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
         }
 
         private void Find_spec_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            Spec.Text = client.Spec_find_stud(Convert.ToString(Settings.Default["id"]));
+            Spec.Text = client.Spec_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
         }
 
         private void Find_sal_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            Sal.Text = client.Sal_find_stud(Convert.ToString(Settings.Default["id"]));
+            Sal.Text = client.Sal_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
         }
 
         private void Find_all_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            Fac.Text = client.Fac_find_stud(Convert.ToString(Settings.Default["id"]));
-            Spec.Text = client.Spec_find_stud(Convert.ToString(Settings.Default["id"]));
-            Sal.Text = client.Sal_find_stud(Convert.ToString(Settings.Default["id"]));
+            Fac.Text = client.Fac_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
+            Spec.Text = client.Spec_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
+            Sal.Text = client.Sal_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
         }
 
         private void Student_Load(object sender, EventArgs e)

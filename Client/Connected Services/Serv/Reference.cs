@@ -28,28 +28,28 @@ namespace Client.Serv {
         System.Threading.Tasks.Task<char> LoginForm_loadAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Fac_find_stud", ReplyAction="http://tempuri.org/IServ/Fac_find_studResponse")]
-        string Fac_find_stud(string id);
+        string Fac_find_stud(string id, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Fac_find_stud", ReplyAction="http://tempuri.org/IServ/Fac_find_studResponse")]
-        System.Threading.Tasks.Task<string> Fac_find_studAsync(string id);
+        System.Threading.Tasks.Task<string> Fac_find_studAsync(string id, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Spec_find_stud", ReplyAction="http://tempuri.org/IServ/Spec_find_studResponse")]
-        string Spec_find_stud(string id);
+        string Spec_find_stud(string id, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Spec_find_stud", ReplyAction="http://tempuri.org/IServ/Spec_find_studResponse")]
-        System.Threading.Tasks.Task<string> Spec_find_studAsync(string id);
+        System.Threading.Tasks.Task<string> Spec_find_studAsync(string id, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Sal_find_stud", ReplyAction="http://tempuri.org/IServ/Sal_find_studResponse")]
-        string Sal_find_stud(string id);
+        string Sal_find_stud(string id, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Sal_find_stud", ReplyAction="http://tempuri.org/IServ/Sal_find_studResponse")]
-        System.Threading.Tasks.Task<string> Sal_find_studAsync(string id);
+        System.Threading.Tasks.Task<string> Sal_find_studAsync(string id, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table", ReplyAction="http://tempuri.org/IServ/Take_tableResponse")]
-        System.Data.DataTable Take_table(string table);
+        System.Data.DataTable Take_table(string table, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table", ReplyAction="http://tempuri.org/IServ/Take_tableResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_tableAsync(string table);
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_tableAsync(string table, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows", ReplyAction="http://tempuri.org/IServ/Take_rowsResponse")]
         System.Data.DataTable Take_rows(string table);
@@ -58,28 +58,28 @@ namespace Client.Serv {
         System.Threading.Tasks.Task<System.Data.DataTable> Take_rowsAsync(string table);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table", ReplyAction="http://tempuri.org/IServ/Update_tableResponse")]
-        string Update_table(string table, string name_set, string set, string where);
+        string Update_table(string table, string name_set, string set, string where, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table", ReplyAction="http://tempuri.org/IServ/Update_tableResponse")]
-        System.Threading.Tasks.Task<string> Update_tableAsync(string table, string name_set, string set, string where);
+        System.Threading.Tasks.Task<string> Update_tableAsync(string table, string name_set, string set, string where, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Delete_table", ReplyAction="http://tempuri.org/IServ/Delete_tableResponse")]
-        string Delete_table(string id);
+        string Delete_table(string id, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Delete_table", ReplyAction="http://tempuri.org/IServ/Delete_tableResponse")]
-        System.Threading.Tasks.Task<string> Delete_tableAsync(string id);
+        System.Threading.Tasks.Task<string> Delete_tableAsync(string id, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Top_Sal", ReplyAction="http://tempuri.org/IServ/Top_SalResponse")]
-        string Top_Sal();
+        string Top_Sal(string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Top_Sal", ReplyAction="http://tempuri.org/IServ/Top_SalResponse")]
-        System.Threading.Tasks.Task<string> Top_SalAsync();
+        System.Threading.Tasks.Task<string> Top_SalAsync(string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Exit_to_del", ReplyAction="http://tempuri.org/IServ/Exit_to_delResponse")]
-        string Exit_to_del(string id);
+        string Exit_to_del(string id, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Exit_to_del", ReplyAction="http://tempuri.org/IServ/Exit_to_delResponse")]
-        System.Threading.Tasks.Task<string> Exit_to_delAsync(string id);
+        System.Threading.Tasks.Task<string> Exit_to_delAsync(string id, string select_online);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Insert_Online", ReplyAction="http://tempuri.org/IServ/Insert_OnlineResponse")]
         void Insert_Online(string id);
@@ -137,36 +137,36 @@ namespace Client.Serv {
             return base.Channel.LoginForm_loadAsync(id);
         }
         
-        public string Fac_find_stud(string id) {
-            return base.Channel.Fac_find_stud(id);
+        public string Fac_find_stud(string id, string select_online) {
+            return base.Channel.Fac_find_stud(id, select_online);
         }
         
-        public System.Threading.Tasks.Task<string> Fac_find_studAsync(string id) {
-            return base.Channel.Fac_find_studAsync(id);
+        public System.Threading.Tasks.Task<string> Fac_find_studAsync(string id, string select_online) {
+            return base.Channel.Fac_find_studAsync(id, select_online);
         }
         
-        public string Spec_find_stud(string id) {
-            return base.Channel.Spec_find_stud(id);
+        public string Spec_find_stud(string id, string select_online) {
+            return base.Channel.Spec_find_stud(id, select_online);
         }
         
-        public System.Threading.Tasks.Task<string> Spec_find_studAsync(string id) {
-            return base.Channel.Spec_find_studAsync(id);
+        public System.Threading.Tasks.Task<string> Spec_find_studAsync(string id, string select_online) {
+            return base.Channel.Spec_find_studAsync(id, select_online);
         }
         
-        public string Sal_find_stud(string id) {
-            return base.Channel.Sal_find_stud(id);
+        public string Sal_find_stud(string id, string select_online) {
+            return base.Channel.Sal_find_stud(id, select_online);
         }
         
-        public System.Threading.Tasks.Task<string> Sal_find_studAsync(string id) {
-            return base.Channel.Sal_find_studAsync(id);
+        public System.Threading.Tasks.Task<string> Sal_find_studAsync(string id, string select_online) {
+            return base.Channel.Sal_find_studAsync(id, select_online);
         }
         
-        public System.Data.DataTable Take_table(string table) {
-            return base.Channel.Take_table(table);
+        public System.Data.DataTable Take_table(string table, string select_online) {
+            return base.Channel.Take_table(table, select_online);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_tableAsync(string table) {
-            return base.Channel.Take_tableAsync(table);
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_tableAsync(string table, string select_online) {
+            return base.Channel.Take_tableAsync(table, select_online);
         }
         
         public System.Data.DataTable Take_rows(string table) {
@@ -177,36 +177,36 @@ namespace Client.Serv {
             return base.Channel.Take_rowsAsync(table);
         }
         
-        public string Update_table(string table, string name_set, string set, string where) {
-            return base.Channel.Update_table(table, name_set, set, where);
+        public string Update_table(string table, string name_set, string set, string where, string select_online) {
+            return base.Channel.Update_table(table, name_set, set, where, select_online);
         }
         
-        public System.Threading.Tasks.Task<string> Update_tableAsync(string table, string name_set, string set, string where) {
-            return base.Channel.Update_tableAsync(table, name_set, set, where);
+        public System.Threading.Tasks.Task<string> Update_tableAsync(string table, string name_set, string set, string where, string select_online) {
+            return base.Channel.Update_tableAsync(table, name_set, set, where, select_online);
         }
         
-        public string Delete_table(string id) {
-            return base.Channel.Delete_table(id);
+        public string Delete_table(string id, string select_online) {
+            return base.Channel.Delete_table(id, select_online);
         }
         
-        public System.Threading.Tasks.Task<string> Delete_tableAsync(string id) {
-            return base.Channel.Delete_tableAsync(id);
+        public System.Threading.Tasks.Task<string> Delete_tableAsync(string id, string select_online) {
+            return base.Channel.Delete_tableAsync(id, select_online);
         }
         
-        public string Top_Sal() {
-            return base.Channel.Top_Sal();
+        public string Top_Sal(string select_online) {
+            return base.Channel.Top_Sal(select_online);
         }
         
-        public System.Threading.Tasks.Task<string> Top_SalAsync() {
-            return base.Channel.Top_SalAsync();
+        public System.Threading.Tasks.Task<string> Top_SalAsync(string select_online) {
+            return base.Channel.Top_SalAsync(select_online);
         }
         
-        public string Exit_to_del(string id) {
-            return base.Channel.Exit_to_del(id);
+        public string Exit_to_del(string id, string select_online) {
+            return base.Channel.Exit_to_del(id, select_online);
         }
         
-        public System.Threading.Tasks.Task<string> Exit_to_delAsync(string id) {
-            return base.Channel.Exit_to_delAsync(id);
+        public System.Threading.Tasks.Task<string> Exit_to_delAsync(string id, string select_online) {
+            return base.Channel.Exit_to_delAsync(id, select_online);
         }
         
         public void Insert_Online(string id) {

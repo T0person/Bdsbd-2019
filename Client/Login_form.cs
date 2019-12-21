@@ -38,6 +38,7 @@ namespace Client
                     char role = client.LoginForm_load(id);
                     Settings.Default["role"] = role;
                     Settings.Default.Save();
+                    client.Insert_Online(Settings.Default["id"].ToString());
                     if (role == '1')
                     {
                         Hide();

@@ -24,51 +24,51 @@ namespace Client
         private void All_button_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            DataTable dt = client.Take_table("people");
+            DataTable dt = client.Take_table("people", Settings.Default["id"].ToString());
             dataGridView1.DataSource = dt;
         }
 
         private void Students_button_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            DataTable dt = client.Take_table("students");
+            DataTable dt = client.Take_table("students", Settings.Default["id"].ToString());
             dataGridView1.DataSource = dt;
         }
 
         private void Teachers_button_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            DataTable dt = client.Take_table("teachers");
+            DataTable dt = client.Take_table("teachers", Settings.Default["id"].ToString());
             dataGridView1.DataSource = dt;
         }
 
         private void Staff_button_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            DataTable dt = client.Take_table("staff");
+            DataTable dt = client.Take_table("staff", Settings.Default["id"].ToString());
             dataGridView1.DataSource = dt;
         }
 
         private void Fac_button_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            DataTable dt = client.Take_table("faculties");
+            DataTable dt = client.Take_table("faculties", Settings.Default["id"].ToString());
             dataGridView1.DataSource = dt;
         }
 
         private void Spec_button_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            DataTable dt = client.Take_table("specials");
+            DataTable dt = client.Take_table("specials", Settings.Default["id"].ToString());
             dataGridView1.DataSource = dt;
         }
 
         private void Sal_button_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            DataTable dt = client.Take_table("salary");
+            DataTable dt = client.Take_table("salary", Settings.Default["id"].ToString());
             dataGridView1.DataSource = dt;
-            MessageBox.Show("Всего монеток" + client.Top_Sal());
+            MessageBox.Show("Всего монеток" + client.Top_Sal(Settings.Default["id"].ToString()));
         }
 
         private void Update_button_Click(object sender, EventArgs e)
@@ -88,86 +88,109 @@ namespace Client
         private void Insert_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Это сикретная функция, уди отсюда");
+            //
             //Hide();
             //MySqlConnection SqlConnection = new MySqlConnection("server=localhost; port=3306;username=root;password=root;database=kurs");
-            //StreamReader f1 = new StreamReader("table1");
+            //SqlConnection.Open();
             //string id = "";
+            //string id_spec = "", id_fac = "";
             //int refresh = 1, who = 1;
+            //int i = 1, j = 1;
+            //for (int i1 = 1; i1 <= 5000; i1++)
+            //{
+            //    using (SHA1 shaM = new SHA1Managed())
+            //    {
+            //        byte[] hash2 = shaM.ComputeHash(Encoding.UTF8.GetBytes(i1.ToString() + ")"));
+            //        id = BitConverter.ToString(hash2).Replace("-", "").ToLower();
+            //    }
+            //    MySqlCommand faculties = new MySqlCommand("INSERT INTO faculties VALUE(@id,@f_name,@f_dir,@f_sub_dir)", SqlConnection);
+            //    faculties.Parameters.AddWithValue("@id", id);
+            //    faculties.Parameters.AddWithValue("@f_name", i1.ToString() + "_faculty");
+            //    faculties.Parameters.AddWithValue("@f_dir", i1.ToString() + "_faculty_dir");
+            //    faculties.Parameters.AddWithValue("@f_sub_dir", i1.ToString() + "_faculty_sub_dir");
+            //    faculties.ExecuteNonQuery();
+            //}
+            //for (int i1 = 1; i1 <= 10000; i1++)
+            //{
+            //    using (SHA1 shaM = new SHA1Managed())
+            //    {
+            //        byte[] hash2 = shaM.ComputeHash(Encoding.UTF8.GetBytes(i1.ToString() + "."));
+            //        id = BitConverter.ToString(hash2).Replace("-", "").ToLower();
+            //    }
+            //    MySqlCommand specials = new MySqlCommand("INSERT INTO specials VALUE(@id,@spec_name,@spec_dir)", SqlConnection);
+            //    specials.Parameters.AddWithValue("@id", id);
+            //    specials.Parameters.AddWithValue("@spec_name", i1.ToString() + "_spec_name");
+            //    specials.Parameters.AddWithValue("@spec_dir", i1.ToString() + "_spec_dir");
+            //    specials.ExecuteNonQuery();
+            //}
+            //StreamReader f1 = new StreamReader("table1");
             //while (!f1.EndOfStream)
             //{
             //    SqlConnection.Close();
             //    string s1 = f1.ReadLine();
             //    string[] words1 = s1.Split(new char[] { ',' });
-            //    MySqlCommand people = new MySqlCommand("INSERT INTO people VALUE(@id,@fio,MD5(@password))");
+            //    MySqlCommand people = new MySqlCommand("INSERT INTO people VALUE(@id,@fio,MD5(@password))", SqlConnection);
             //    SqlConnection.Open();
             //    using (SHA1 shaM = new SHA1Managed())
             //    {
             //        byte[] hash2 = shaM.ComputeHash(Encoding.UTF8.GetBytes(words1[0] + words1[1]));
+            //        byte[] hash = shaM.ComputeHash(Encoding.UTF8.GetBytes(i.ToString() + "."));
+            //        byte[] hash1 = shaM.ComputeHash(Encoding.UTF8.GetBytes(j.ToString() + ")"));
             //        id = BitConverter.ToString(hash2).Replace("-", "").ToLower();
+            //        id_spec = BitConverter.ToString(hash).Replace("-", "").ToLower();
+            //        id_fac = BitConverter.ToString(hash1).Replace("-", "").ToLower();
             //    }
             //    people.Parameters.AddWithValue("@id", id);
             //    people.Parameters.AddWithValue("@fio", words1[0]);
             //    people.Parameters.AddWithValue("@password", words1[3]);
             //    people.ExecuteNonQuery();
-            //    if(who == 1)
+            //    if (who == 1)
             //    {
-            //        MySqlCommand students = new MySqlCommand("INSERT INTO students VALUE(@id)");
+            //        MySqlCommand students = new MySqlCommand("INSERT INTO students VALUE(@id,@id_spec,@id_fac)", SqlConnection);
             //        students.Parameters.AddWithValue("@id", id);
+            //        students.Parameters.AddWithValue("@id_spec", id_spec);
+            //        students.Parameters.AddWithValue("@id_fac", id_fac);
             //        students.ExecuteNonQuery();
             //    }
             //    else if (who == 2)
             //    {
-            //        MySqlCommand teachers = new MySqlCommand("INSERT INTO teachers VALUE(@id)");
+            //        MySqlCommand teachers = new MySqlCommand("INSERT INTO teachers VALUE(@id,@id_spec,@id_fac)", SqlConnection);
             //        teachers.Parameters.AddWithValue("@id", id);
+            //        teachers.Parameters.AddWithValue("@id_spec", id_spec);
+            //        teachers.Parameters.AddWithValue("@id_fac", id_fac);
             //        teachers.ExecuteNonQuery();
             //    }
             //    else if (who == 3)
             //    {
-            //        MySqlCommand staff = new MySqlCommand("INSERT INTO staff VALUE(@id,@job_name)");
+            //        if (i == 10000)
+            //            i = 0;
+            //        if (j == 5000)
+            //            j = 0;
+            //        i++;
+            //        j++;
+            //        MySqlCommand staff = new MySqlCommand("INSERT INTO staff VALUE(@id,@job_name)", SqlConnection);
             //        staff.Parameters.AddWithValue("@id", id);
             //        staff.Parameters.AddWithValue("@job_name", refresh.ToString() + "_job_name");
             //        staff.ExecuteNonQuery();
             //        refresh++;
-
-            //        MySqlCommand table11 = new MySqlCommand("INSERT INTO table1 VALUE(@id,@address,@email,STR_TO_DATE(@registration,'%a %b %d %Y %T'))");
-            //        table11.Parameters.AddWithValue("@id", id);
-            //        table11.Parameters.AddWithValue("@address", words1[1]);
-            //        table11.Parameters.AddWithValue("@email", words1[2]);
-            //        table11.Parameters.AddWithValue("@registration", words1[4]);
-            //        table11.ExecuteNonQuery();
-            //        who = 1;
-            //        continue;
             //    }
-            //    MySqlCommand faculties = new MySqlCommand("INSERT INTO faculties VALUE(@id,@f_name,@f_dir,@f_sub_dir)");
-            //    faculties.Parameters.AddWithValue("@id", id);
-            //    faculties.Parameters.AddWithValue("@f_name", refresh.ToString() +"_faculty");
-            //    faculties.Parameters.AddWithValue("@f_dir", refresh.ToString() + "_faculty_dir");
-            //    faculties.Parameters.AddWithValue("@f_sub_dir", refresh.ToString() + "_faculty_sub_dir");
-            //    faculties.ExecuteNonQuery();
-            //    refresh++;
-
-            //    MySqlCommand specials = new MySqlCommand("INSERT INTO specials VALUE(@id,@spec_name,@spec_dir)");
-            //    specials.Parameters.AddWithValue("@id", id);
-            //    specials.Parameters.AddWithValue("@spec_name", refresh.ToString() +"_spec_name");
-            //    specials.Parameters.AddWithValue("@spec_dir", refresh.ToString()+"_spec_dir");
-            //    specials.ExecuteNonQuery();
-            //    refresh++;
-
-            //    MySqlCommand table1 = new MySqlCommand("INSERT INTO table1 VALUE(@id,@address,@email,STR_TO_DATE(@registration,'%a %b %d %Y %T'))");
+            //    MySqlCommand table1 = new MySqlCommand("INSERT INTO table1 VALUE(@id,@address,@email,STR_TO_DATE(@registration,'%a %b %d %Y %T'))", SqlConnection);
             //    table1.Parameters.AddWithValue("@id", id);
             //    table1.Parameters.AddWithValue("@address", words1[1]);
             //    table1.Parameters.AddWithValue("@email", words1[2]);
             //    table1.Parameters.AddWithValue("@registration", words1[4]);
             //    table1.ExecuteNonQuery();
-
-            //    who++;
+            //    if (who == 3)
+            //        who = 1;
+            //    else
+            //        who++;
             //}
             //StreamReader f2 = new StreamReader("table2");
             //while (!f2.EndOfStream)
             //{
             //    string s2 = f2.ReadLine();
             //    string[] words2 = s2.Split(new char[] { ',' });
-            //    MySqlCommand table2 = new MySqlCommand("INSERT INTO table2 VALUE(@id,STR_TO_DATE(@b_data,'%a %b %d %Y %T'),@about,@phone,@company)");
+            //    MySqlCommand table2 = new MySqlCommand("INSERT INTO table2 VALUE(@id,STR_TO_DATE(@b_data,'%a %b %d %Y %T'),@about,@phone,@company)", SqlConnection);
             //    using (SHA1 shaM = new SHA1Managed())
             //    {
             //        byte[] hash2 = shaM.ComputeHash(Encoding.UTF8.GetBytes(words2[0] + words2[1]));
@@ -186,8 +209,8 @@ namespace Client
             //{
             //    string s3 = f3.ReadLine();
             //    string[] words3 = s3.Split(new char[] { ',' });
-            //    MySqlCommand table3 = new MySqlCommand("INSERT INTO table3 VALUE(@id,@card_number)");
-            //    MySqlCommand salary = new MySqlCommand("INSERT INTO salary VALUE(@id,@amount)");
+            //    MySqlCommand table3 = new MySqlCommand("INSERT INTO table3 VALUE(@id,@card_number)", SqlConnection);
+            //    MySqlCommand salary = new MySqlCommand("INSERT INTO salary VALUE(@id,@amount)", SqlConnection);
             //    using (SHA1 shaM = new SHA1Managed())
             //    {
             //        byte[] hash2 = shaM.ComputeHash(Encoding.UTF8.GetBytes(words3[0] + words3[1]));
@@ -202,6 +225,7 @@ namespace Client
             //    salary.ExecuteNonQuery();
             //}
             //Application.Exit();
+            //
         }
 
         private void Exit_button_Click(object sender, EventArgs e)

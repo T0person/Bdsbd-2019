@@ -17,22 +17,16 @@ namespace Client
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
             Application.EnableVisualStyles();
+            //Settings.Default["id"] = null;
+            //Settings.Default["role"] = null;
+            //Settings.Default.Save();
             Application.SetCompatibleTextRenderingDefault(false);
             if (Convert.ToInt32(Settings.Default["role"]) == '1')
-            {
-                client.Insert_Online(Settings.Default["id"].ToString());
                 Application.Run(new Student());
-            }
             else if (Convert.ToInt32(Settings.Default["role"]) == '2')
-            {
-                client.Insert_Online(Settings.Default["id"].ToString());
                 Application.Run(new Teacher());
-            }
             else if (Convert.ToInt32(Settings.Default["role"]) == '3')
-            {
-                client.Insert_Online(Settings.Default["id"].ToString());
                 Application.Run(new Staff());
-            }
             else
                 Application.Run(new Login_form());
         }

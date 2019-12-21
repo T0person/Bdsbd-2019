@@ -24,3 +24,15 @@ G:\Kurs\Serv\bin\Debug\BouncyCastle.Crypto.dll
 G:\Kurs\Serv\bin\Debug\Renci.SshNet.dll
 G:\Kurs\Serv\bin\Debug\MySql.Data.xml
 G:\Kurs\Serv\obj\Debug\Serv.csproj.CopyComplete
+F:\Kurs\Serv\bin\Debug\Serv.dll.config
+F:\Kurs\Serv\bin\Debug\Serv.dll
+F:\Kurs\Serv\bin\Debug\Serv.pdb
+F:\Kurs\Serv\bin\Debug\MySql.Data.dll
+F:\Kurs\Serv\bin\Debug\Google.Protobuf.dll
+F:\Kurs\Serv\bin\Debug\BouncyCastle.Crypto.dll
+F:\Kurs\Serv\bin\Debug\Renci.SshNet.dll
+F:\Kurs\Serv\bin\Debug\MySql.Data.xml
+F:\Kurs\Serv\obj\Debug\Serv.csprojAssemblyReference.cache
+F:\Kurs\Serv\obj\Debug\Serv.csproj.CopyComplete
+F:\Kurs\Serv\obj\Debug\Serv.dll
+F:\Kurs\Serv\obj\Debug\Serv.pdb

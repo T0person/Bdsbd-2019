@@ -32,7 +32,7 @@ namespace Client
         private void My_sal_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            Sal.Text = "Монетки: " + client.Sal_find_stud(Convert.ToString(Settings.Default["id"]));
+            Sal.Text = "Монетки: " + client.Sal_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
         }
 
         private void Close_button_Click(object sender, EventArgs e)
@@ -45,14 +45,14 @@ namespace Client
         private void My_fac_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            DataTable dt = client.Take_table("faculties");
+            DataTable dt = client.Take_table("faculties", Settings.Default["id"].ToString());
             dataGridView1.DataSource = dt;
         }
 
         private void My_spec_Click(object sender, EventArgs e)
         {
             var client = new Serv.ServClient("NetTcpBinding_IServ");
-            DataTable dt = client.Take_table("specials");
+            DataTable dt = client.Take_table("specials", Settings.Default["id"].ToString());
             dataGridView1.DataSource = dt;
         }
 

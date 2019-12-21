@@ -18,21 +18,21 @@ namespace Serv
         [OperationContract]
         char LoginForm_load(string id);
         [OperationContract]
-        string Fac_find_stud(string id);
+        string Fac_find_stud(string id, string select_online);
         [OperationContract]
-        string Spec_find_stud(string id);
+        string Spec_find_stud(string id, string select_online);
         [OperationContract]
-        string Sal_find_stud(string id);
+        string Sal_find_stud(string id, string select_online);
         [OperationContract]
-        DataTable Take_table(string table);
+        DataTable Take_table(string table, string select_online);
         [OperationContract]
         DataTable Take_rows(string table);
         [OperationContract]
-        string Update_table(string table, string name_set, string set, string where);
+        string Update_table(string table, string name_set, string set, string where, string select_online);
         [OperationContract]
-        string Delete_table(string id);
+        string Delete_table(string id, string select_online);
         [OperationContract]
-        string Top_Sal();
+        string Top_Sal(string select_online);
         [OperationContract]
         string Exit_to_del(string id);
         [OperationContract]

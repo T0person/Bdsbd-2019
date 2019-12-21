@@ -68,6 +68,7 @@
             this.Set_str.Name = "Set_str";
             this.Set_str.Size = new System.Drawing.Size(148, 26);
             this.Set_str.TabIndex = 18;
+            this.Set_str.TextChanged += new System.EventHandler(this.Set_str_TextChanged);
             // 
             // Update_button
             // 
