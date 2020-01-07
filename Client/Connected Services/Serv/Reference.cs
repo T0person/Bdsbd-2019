@@ -16,82 +16,250 @@ namespace Client.Serv {
     public interface IServ {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/LoginForm", ReplyAction="http://tempuri.org/IServ/LoginFormResponse")]
-        string LoginForm(string login, string password);
+        string[] LoginForm(string login, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/LoginForm", ReplyAction="http://tempuri.org/IServ/LoginFormResponse")]
-        System.Threading.Tasks.Task<string> LoginFormAsync(string login, string password);
+        System.Threading.Tasks.Task<string[]> LoginFormAsync(string login, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/LoginForm_load", ReplyAction="http://tempuri.org/IServ/LoginForm_loadResponse")]
-        char LoginForm_load(string id);
+        char LoginForm_load(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/LoginForm_load", ReplyAction="http://tempuri.org/IServ/LoginForm_loadResponse")]
-        System.Threading.Tasks.Task<char> LoginForm_loadAsync(string id);
+        System.Threading.Tasks.Task<char> LoginForm_loadAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Fac_find_stud", ReplyAction="http://tempuri.org/IServ/Fac_find_studResponse")]
-        string Fac_find_stud(string id, string select_online);
+        string Fac_find_stud(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Fac_find_stud", ReplyAction="http://tempuri.org/IServ/Fac_find_studResponse")]
-        System.Threading.Tasks.Task<string> Fac_find_studAsync(string id, string select_online);
+        System.Threading.Tasks.Task<string> Fac_find_studAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Spec_find_stud", ReplyAction="http://tempuri.org/IServ/Spec_find_studResponse")]
-        string Spec_find_stud(string id, string select_online);
+        string Spec_find_stud(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Spec_find_stud", ReplyAction="http://tempuri.org/IServ/Spec_find_studResponse")]
-        System.Threading.Tasks.Task<string> Spec_find_studAsync(string id, string select_online);
+        System.Threading.Tasks.Task<string> Spec_find_studAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Sal_find_stud", ReplyAction="http://tempuri.org/IServ/Sal_find_studResponse")]
-        string Sal_find_stud(string id, string select_online);
+        string Sal_find_stud(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Sal_find_stud", ReplyAction="http://tempuri.org/IServ/Sal_find_studResponse")]
-        System.Threading.Tasks.Task<string> Sal_find_studAsync(string id, string select_online);
+        System.Threading.Tasks.Task<string> Sal_find_studAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table", ReplyAction="http://tempuri.org/IServ/Take_tableResponse")]
-        System.Data.DataTable Take_table(string table, string select_online);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_people", ReplyAction="http://tempuri.org/IServ/Take_table_peopleResponse")]
+        System.Data.DataTable Take_table_people(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table", ReplyAction="http://tempuri.org/IServ/Take_tableResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_tableAsync(string table, string select_online);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_people", ReplyAction="http://tempuri.org/IServ/Take_table_peopleResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_peopleAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows", ReplyAction="http://tempuri.org/IServ/Take_rowsResponse")]
-        System.Data.DataTable Take_rows(string table);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_students", ReplyAction="http://tempuri.org/IServ/Take_table_studentsResponse")]
+        System.Data.DataTable Take_table_students(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows", ReplyAction="http://tempuri.org/IServ/Take_rowsResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_rowsAsync(string table);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_students", ReplyAction="http://tempuri.org/IServ/Take_table_studentsResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_studentsAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table", ReplyAction="http://tempuri.org/IServ/Update_tableResponse")]
-        string Update_table(string table, string name_set, string set, string where, string select_online);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_teachers", ReplyAction="http://tempuri.org/IServ/Take_table_teachersResponse")]
+        System.Data.DataTable Take_table_teachers(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table", ReplyAction="http://tempuri.org/IServ/Update_tableResponse")]
-        System.Threading.Tasks.Task<string> Update_tableAsync(string table, string name_set, string set, string where, string select_online);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_teachers", ReplyAction="http://tempuri.org/IServ/Take_table_teachersResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_teachersAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_staff", ReplyAction="http://tempuri.org/IServ/Take_table_staffResponse")]
+        System.Data.DataTable Take_table_staff(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_staff", ReplyAction="http://tempuri.org/IServ/Take_table_staffResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_staffAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_specials", ReplyAction="http://tempuri.org/IServ/Take_table_specialsResponse")]
+        System.Data.DataTable Take_table_specials(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_specials", ReplyAction="http://tempuri.org/IServ/Take_table_specialsResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_specialsAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_faculties", ReplyAction="http://tempuri.org/IServ/Take_table_facultiesResponse")]
+        System.Data.DataTable Take_table_faculties(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_faculties", ReplyAction="http://tempuri.org/IServ/Take_table_facultiesResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_facultiesAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_salary", ReplyAction="http://tempuri.org/IServ/Take_table_salaryResponse")]
+        System.Data.DataTable Take_table_salary(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_salary", ReplyAction="http://tempuri.org/IServ/Take_table_salaryResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_salaryAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_table1", ReplyAction="http://tempuri.org/IServ/Take_table_table1Response")]
+        System.Data.DataTable Take_table_table1(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_table1", ReplyAction="http://tempuri.org/IServ/Take_table_table1Response")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_table1Async(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_table2", ReplyAction="http://tempuri.org/IServ/Take_table_table2Response")]
+        System.Data.DataTable Take_table_table2(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_table2", ReplyAction="http://tempuri.org/IServ/Take_table_table2Response")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_table2Async(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_table3", ReplyAction="http://tempuri.org/IServ/Take_table_table3Response")]
+        System.Data.DataTable Take_table_table3(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_table3", ReplyAction="http://tempuri.org/IServ/Take_table_table3Response")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_table3Async(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_people", ReplyAction="http://tempuri.org/IServ/Take_rows_peopleResponse")]
+        System.Data.DataTable Take_rows_people();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_people", ReplyAction="http://tempuri.org/IServ/Take_rows_peopleResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_peopleAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_students", ReplyAction="http://tempuri.org/IServ/Take_rows_studentsResponse")]
+        System.Data.DataTable Take_rows_students();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_students", ReplyAction="http://tempuri.org/IServ/Take_rows_studentsResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_studentsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_teachers", ReplyAction="http://tempuri.org/IServ/Take_rows_teachersResponse")]
+        System.Data.DataTable Take_rows_teachers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_teachers", ReplyAction="http://tempuri.org/IServ/Take_rows_teachersResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_teachersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_staff", ReplyAction="http://tempuri.org/IServ/Take_rows_staffResponse")]
+        System.Data.DataTable Take_rows_staff();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_staff", ReplyAction="http://tempuri.org/IServ/Take_rows_staffResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_staffAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_specials", ReplyAction="http://tempuri.org/IServ/Take_rows_specialsResponse")]
+        System.Data.DataTable Take_rows_specials();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_specials", ReplyAction="http://tempuri.org/IServ/Take_rows_specialsResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_specialsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_faculties", ReplyAction="http://tempuri.org/IServ/Take_rows_facultiesResponse")]
+        System.Data.DataTable Take_rows_faculties();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_faculties", ReplyAction="http://tempuri.org/IServ/Take_rows_facultiesResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_facultiesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_salary", ReplyAction="http://tempuri.org/IServ/Take_rows_salaryResponse")]
+        System.Data.DataTable Take_rows_salary();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_salary", ReplyAction="http://tempuri.org/IServ/Take_rows_salaryResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_salaryAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_table1", ReplyAction="http://tempuri.org/IServ/Take_rows_table1Response")]
+        System.Data.DataTable Take_rows_table1();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_table1", ReplyAction="http://tempuri.org/IServ/Take_rows_table1Response")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_table1Async();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_table2", ReplyAction="http://tempuri.org/IServ/Take_rows_table2Response")]
+        System.Data.DataTable Take_rows_table2();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_table2", ReplyAction="http://tempuri.org/IServ/Take_rows_table2Response")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_table2Async();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_table3", ReplyAction="http://tempuri.org/IServ/Take_rows_table3Response")]
+        System.Data.DataTable Take_rows_table3();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_table3", ReplyAction="http://tempuri.org/IServ/Take_rows_table3Response")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_table3Async();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_people", ReplyAction="http://tempuri.org/IServ/Update_table_peopleResponse")]
+        char Update_table_people(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_people", ReplyAction="http://tempuri.org/IServ/Update_table_peopleResponse")]
+        System.Threading.Tasks.Task<char> Update_table_peopleAsync(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_students", ReplyAction="http://tempuri.org/IServ/Update_table_studentsResponse")]
+        char Update_table_students(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_students", ReplyAction="http://tempuri.org/IServ/Update_table_studentsResponse")]
+        System.Threading.Tasks.Task<char> Update_table_studentsAsync(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_teachers", ReplyAction="http://tempuri.org/IServ/Update_table_teachersResponse")]
+        char Update_table_teachers(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_teachers", ReplyAction="http://tempuri.org/IServ/Update_table_teachersResponse")]
+        System.Threading.Tasks.Task<char> Update_table_teachersAsync(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_staff", ReplyAction="http://tempuri.org/IServ/Update_table_staffResponse")]
+        char Update_table_staff(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_staff", ReplyAction="http://tempuri.org/IServ/Update_table_staffResponse")]
+        System.Threading.Tasks.Task<char> Update_table_staffAsync(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_specials", ReplyAction="http://tempuri.org/IServ/Update_table_specialsResponse")]
+        char Update_table_specials(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_specials", ReplyAction="http://tempuri.org/IServ/Update_table_specialsResponse")]
+        System.Threading.Tasks.Task<char> Update_table_specialsAsync(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_faculties", ReplyAction="http://tempuri.org/IServ/Update_table_facultiesResponse")]
+        char Update_table_faculties(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_faculties", ReplyAction="http://tempuri.org/IServ/Update_table_facultiesResponse")]
+        System.Threading.Tasks.Task<char> Update_table_facultiesAsync(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_salary", ReplyAction="http://tempuri.org/IServ/Update_table_salaryResponse")]
+        char Update_table_salary(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_salary", ReplyAction="http://tempuri.org/IServ/Update_table_salaryResponse")]
+        System.Threading.Tasks.Task<char> Update_table_salaryAsync(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_table1", ReplyAction="http://tempuri.org/IServ/Update_table_table1Response")]
+        char Update_table_table1(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_table1", ReplyAction="http://tempuri.org/IServ/Update_table_table1Response")]
+        System.Threading.Tasks.Task<char> Update_table_table1Async(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_table2", ReplyAction="http://tempuri.org/IServ/Update_table_table2Response")]
+        char Update_table_table2(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_table2", ReplyAction="http://tempuri.org/IServ/Update_table_table2Response")]
+        System.Threading.Tasks.Task<char> Update_table_table2Async(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_table3", ReplyAction="http://tempuri.org/IServ/Update_table_table3Response")]
+        char Update_table_table3(string table, string name_set, string set, string where, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Update_table_table3", ReplyAction="http://tempuri.org/IServ/Update_table_table3Response")]
+        System.Threading.Tasks.Task<char> Update_table_table3Async(string table, string name_set, string set, string where, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Delete_table", ReplyAction="http://tempuri.org/IServ/Delete_tableResponse")]
-        string Delete_table(string id, string select_online);
+        string Delete_table(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Delete_table", ReplyAction="http://tempuri.org/IServ/Delete_tableResponse")]
-        System.Threading.Tasks.Task<string> Delete_tableAsync(string id, string select_online);
+        System.Threading.Tasks.Task<string> Delete_tableAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Top_Sal", ReplyAction="http://tempuri.org/IServ/Top_SalResponse")]
-        string Top_Sal(string select_online);
+        string Top_Sal(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Top_Sal", ReplyAction="http://tempuri.org/IServ/Top_SalResponse")]
-        System.Threading.Tasks.Task<string> Top_SalAsync(string select_online);
+        System.Threading.Tasks.Task<string> Top_SalAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Exit_to_del", ReplyAction="http://tempuri.org/IServ/Exit_to_delResponse")]
-        string Exit_to_del(string id, string select_online);
+        string Exit_to_del(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Exit_to_del", ReplyAction="http://tempuri.org/IServ/Exit_to_delResponse")]
-        System.Threading.Tasks.Task<string> Exit_to_delAsync(string id, string select_online);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Insert_Online", ReplyAction="http://tempuri.org/IServ/Insert_OnlineResponse")]
-        void Insert_Online(string id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Insert_Online", ReplyAction="http://tempuri.org/IServ/Insert_OnlineResponse")]
-        System.Threading.Tasks.Task Insert_OnlineAsync(string id);
+        System.Threading.Tasks.Task<string> Exit_to_delAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Delete_Online", ReplyAction="http://tempuri.org/IServ/Delete_OnlineResponse")]
-        void Delete_Online(string id);
+        void Delete_Online(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Delete_Online", ReplyAction="http://tempuri.org/IServ/Delete_OnlineResponse")]
-        System.Threading.Tasks.Task Delete_OnlineAsync(string id);
+        System.Threading.Tasks.Task Delete_OnlineAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Plus_Mun50", ReplyAction="http://tempuri.org/IServ/Plus_Mun50Response")]
+        System.Data.DataTable Plus_Mun50(string table, int offset, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Plus_Mun50", ReplyAction="http://tempuri.org/IServ/Plus_Mun50Response")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Plus_Mun50Async(string table, int offset, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Count_table", ReplyAction="http://tempuri.org/IServ/Count_tableResponse")]
+        int Count_table(string table, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Count_table", ReplyAction="http://tempuri.org/IServ/Count_tableResponse")]
+        System.Threading.Tasks.Task<int> Count_tableAsync(string table, string token);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -121,108 +289,332 @@ namespace Client.Serv {
                 base(binding, remoteAddress) {
         }
         
-        public string LoginForm(string login, string password) {
+        public string[] LoginForm(string login, string password) {
             return base.Channel.LoginForm(login, password);
         }
         
-        public System.Threading.Tasks.Task<string> LoginFormAsync(string login, string password) {
+        public System.Threading.Tasks.Task<string[]> LoginFormAsync(string login, string password) {
             return base.Channel.LoginFormAsync(login, password);
         }
         
-        public char LoginForm_load(string id) {
-            return base.Channel.LoginForm_load(id);
+        public char LoginForm_load(string token) {
+            return base.Channel.LoginForm_load(token);
         }
         
-        public System.Threading.Tasks.Task<char> LoginForm_loadAsync(string id) {
-            return base.Channel.LoginForm_loadAsync(id);
+        public System.Threading.Tasks.Task<char> LoginForm_loadAsync(string token) {
+            return base.Channel.LoginForm_loadAsync(token);
         }
         
-        public string Fac_find_stud(string id, string select_online) {
-            return base.Channel.Fac_find_stud(id, select_online);
+        public string Fac_find_stud(string token) {
+            return base.Channel.Fac_find_stud(token);
         }
         
-        public System.Threading.Tasks.Task<string> Fac_find_studAsync(string id, string select_online) {
-            return base.Channel.Fac_find_studAsync(id, select_online);
+        public System.Threading.Tasks.Task<string> Fac_find_studAsync(string token) {
+            return base.Channel.Fac_find_studAsync(token);
         }
         
-        public string Spec_find_stud(string id, string select_online) {
-            return base.Channel.Spec_find_stud(id, select_online);
+        public string Spec_find_stud(string token) {
+            return base.Channel.Spec_find_stud(token);
         }
         
-        public System.Threading.Tasks.Task<string> Spec_find_studAsync(string id, string select_online) {
-            return base.Channel.Spec_find_studAsync(id, select_online);
+        public System.Threading.Tasks.Task<string> Spec_find_studAsync(string token) {
+            return base.Channel.Spec_find_studAsync(token);
         }
         
-        public string Sal_find_stud(string id, string select_online) {
-            return base.Channel.Sal_find_stud(id, select_online);
+        public string Sal_find_stud(string token) {
+            return base.Channel.Sal_find_stud(token);
         }
         
-        public System.Threading.Tasks.Task<string> Sal_find_studAsync(string id, string select_online) {
-            return base.Channel.Sal_find_studAsync(id, select_online);
+        public System.Threading.Tasks.Task<string> Sal_find_studAsync(string token) {
+            return base.Channel.Sal_find_studAsync(token);
         }
         
-        public System.Data.DataTable Take_table(string table, string select_online) {
-            return base.Channel.Take_table(table, select_online);
+        public System.Data.DataTable Take_table_people(string token) {
+            return base.Channel.Take_table_people(token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_tableAsync(string table, string select_online) {
-            return base.Channel.Take_tableAsync(table, select_online);
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_peopleAsync(string token) {
+            return base.Channel.Take_table_peopleAsync(token);
         }
         
-        public System.Data.DataTable Take_rows(string table) {
-            return base.Channel.Take_rows(table);
+        public System.Data.DataTable Take_table_students(string token) {
+            return base.Channel.Take_table_students(token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_rowsAsync(string table) {
-            return base.Channel.Take_rowsAsync(table);
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_studentsAsync(string token) {
+            return base.Channel.Take_table_studentsAsync(token);
         }
         
-        public string Update_table(string table, string name_set, string set, string where, string select_online) {
-            return base.Channel.Update_table(table, name_set, set, where, select_online);
+        public System.Data.DataTable Take_table_teachers(string token) {
+            return base.Channel.Take_table_teachers(token);
         }
         
-        public System.Threading.Tasks.Task<string> Update_tableAsync(string table, string name_set, string set, string where, string select_online) {
-            return base.Channel.Update_tableAsync(table, name_set, set, where, select_online);
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_teachersAsync(string token) {
+            return base.Channel.Take_table_teachersAsync(token);
         }
         
-        public string Delete_table(string id, string select_online) {
-            return base.Channel.Delete_table(id, select_online);
+        public System.Data.DataTable Take_table_staff(string token) {
+            return base.Channel.Take_table_staff(token);
         }
         
-        public System.Threading.Tasks.Task<string> Delete_tableAsync(string id, string select_online) {
-            return base.Channel.Delete_tableAsync(id, select_online);
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_staffAsync(string token) {
+            return base.Channel.Take_table_staffAsync(token);
         }
         
-        public string Top_Sal(string select_online) {
-            return base.Channel.Top_Sal(select_online);
+        public System.Data.DataTable Take_table_specials(string token) {
+            return base.Channel.Take_table_specials(token);
         }
         
-        public System.Threading.Tasks.Task<string> Top_SalAsync(string select_online) {
-            return base.Channel.Top_SalAsync(select_online);
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_specialsAsync(string token) {
+            return base.Channel.Take_table_specialsAsync(token);
         }
         
-        public string Exit_to_del(string id, string select_online) {
-            return base.Channel.Exit_to_del(id, select_online);
+        public System.Data.DataTable Take_table_faculties(string token) {
+            return base.Channel.Take_table_faculties(token);
         }
         
-        public System.Threading.Tasks.Task<string> Exit_to_delAsync(string id, string select_online) {
-            return base.Channel.Exit_to_delAsync(id, select_online);
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_facultiesAsync(string token) {
+            return base.Channel.Take_table_facultiesAsync(token);
         }
         
-        public void Insert_Online(string id) {
-            base.Channel.Insert_Online(id);
+        public System.Data.DataTable Take_table_salary(string token) {
+            return base.Channel.Take_table_salary(token);
         }
         
-        public System.Threading.Tasks.Task Insert_OnlineAsync(string id) {
-            return base.Channel.Insert_OnlineAsync(id);
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_salaryAsync(string token) {
+            return base.Channel.Take_table_salaryAsync(token);
         }
         
-        public void Delete_Online(string id) {
-            base.Channel.Delete_Online(id);
+        public System.Data.DataTable Take_table_table1(string token) {
+            return base.Channel.Take_table_table1(token);
         }
         
-        public System.Threading.Tasks.Task Delete_OnlineAsync(string id) {
-            return base.Channel.Delete_OnlineAsync(id);
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_table1Async(string token) {
+            return base.Channel.Take_table_table1Async(token);
+        }
+        
+        public System.Data.DataTable Take_table_table2(string token) {
+            return base.Channel.Take_table_table2(token);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_table2Async(string token) {
+            return base.Channel.Take_table_table2Async(token);
+        }
+        
+        public System.Data.DataTable Take_table_table3(string token) {
+            return base.Channel.Take_table_table3(token);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_table3Async(string token) {
+            return base.Channel.Take_table_table3Async(token);
+        }
+        
+        public System.Data.DataTable Take_rows_people() {
+            return base.Channel.Take_rows_people();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_peopleAsync() {
+            return base.Channel.Take_rows_peopleAsync();
+        }
+        
+        public System.Data.DataTable Take_rows_students() {
+            return base.Channel.Take_rows_students();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_studentsAsync() {
+            return base.Channel.Take_rows_studentsAsync();
+        }
+        
+        public System.Data.DataTable Take_rows_teachers() {
+            return base.Channel.Take_rows_teachers();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_teachersAsync() {
+            return base.Channel.Take_rows_teachersAsync();
+        }
+        
+        public System.Data.DataTable Take_rows_staff() {
+            return base.Channel.Take_rows_staff();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_staffAsync() {
+            return base.Channel.Take_rows_staffAsync();
+        }
+        
+        public System.Data.DataTable Take_rows_specials() {
+            return base.Channel.Take_rows_specials();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_specialsAsync() {
+            return base.Channel.Take_rows_specialsAsync();
+        }
+        
+        public System.Data.DataTable Take_rows_faculties() {
+            return base.Channel.Take_rows_faculties();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_facultiesAsync() {
+            return base.Channel.Take_rows_facultiesAsync();
+        }
+        
+        public System.Data.DataTable Take_rows_salary() {
+            return base.Channel.Take_rows_salary();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_salaryAsync() {
+            return base.Channel.Take_rows_salaryAsync();
+        }
+        
+        public System.Data.DataTable Take_rows_table1() {
+            return base.Channel.Take_rows_table1();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_table1Async() {
+            return base.Channel.Take_rows_table1Async();
+        }
+        
+        public System.Data.DataTable Take_rows_table2() {
+            return base.Channel.Take_rows_table2();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_table2Async() {
+            return base.Channel.Take_rows_table2Async();
+        }
+        
+        public System.Data.DataTable Take_rows_table3() {
+            return base.Channel.Take_rows_table3();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_table3Async() {
+            return base.Channel.Take_rows_table3Async();
+        }
+        
+        public char Update_table_people(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_people(table, name_set, set, where, token);
+        }
+        
+        public System.Threading.Tasks.Task<char> Update_table_peopleAsync(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_peopleAsync(table, name_set, set, where, token);
+        }
+        
+        public char Update_table_students(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_students(table, name_set, set, where, token);
+        }
+        
+        public System.Threading.Tasks.Task<char> Update_table_studentsAsync(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_studentsAsync(table, name_set, set, where, token);
+        }
+        
+        public char Update_table_teachers(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_teachers(table, name_set, set, where, token);
+        }
+        
+        public System.Threading.Tasks.Task<char> Update_table_teachersAsync(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_teachersAsync(table, name_set, set, where, token);
+        }
+        
+        public char Update_table_staff(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_staff(table, name_set, set, where, token);
+        }
+        
+        public System.Threading.Tasks.Task<char> Update_table_staffAsync(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_staffAsync(table, name_set, set, where, token);
+        }
+        
+        public char Update_table_specials(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_specials(table, name_set, set, where, token);
+        }
+        
+        public System.Threading.Tasks.Task<char> Update_table_specialsAsync(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_specialsAsync(table, name_set, set, where, token);
+        }
+        
+        public char Update_table_faculties(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_faculties(table, name_set, set, where, token);
+        }
+        
+        public System.Threading.Tasks.Task<char> Update_table_facultiesAsync(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_facultiesAsync(table, name_set, set, where, token);
+        }
+        
+        public char Update_table_salary(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_salary(table, name_set, set, where, token);
+        }
+        
+        public System.Threading.Tasks.Task<char> Update_table_salaryAsync(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_salaryAsync(table, name_set, set, where, token);
+        }
+        
+        public char Update_table_table1(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_table1(table, name_set, set, where, token);
+        }
+        
+        public System.Threading.Tasks.Task<char> Update_table_table1Async(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_table1Async(table, name_set, set, where, token);
+        }
+        
+        public char Update_table_table2(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_table2(table, name_set, set, where, token);
+        }
+        
+        public System.Threading.Tasks.Task<char> Update_table_table2Async(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_table2Async(table, name_set, set, where, token);
+        }
+        
+        public char Update_table_table3(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_table3(table, name_set, set, where, token);
+        }
+        
+        public System.Threading.Tasks.Task<char> Update_table_table3Async(string table, string name_set, string set, string where, string token) {
+            return base.Channel.Update_table_table3Async(table, name_set, set, where, token);
+        }
+        
+        public string Delete_table(string token) {
+            return base.Channel.Delete_table(token);
+        }
+        
+        public System.Threading.Tasks.Task<string> Delete_tableAsync(string token) {
+            return base.Channel.Delete_tableAsync(token);
+        }
+        
+        public string Top_Sal(string token) {
+            return base.Channel.Top_Sal(token);
+        }
+        
+        public System.Threading.Tasks.Task<string> Top_SalAsync(string token) {
+            return base.Channel.Top_SalAsync(token);
+        }
+        
+        public string Exit_to_del(string token) {
+            return base.Channel.Exit_to_del(token);
+        }
+        
+        public System.Threading.Tasks.Task<string> Exit_to_delAsync(string token) {
+            return base.Channel.Exit_to_delAsync(token);
+        }
+        
+        public void Delete_Online(string token) {
+            base.Channel.Delete_Online(token);
+        }
+        
+        public System.Threading.Tasks.Task Delete_OnlineAsync(string token) {
+            return base.Channel.Delete_OnlineAsync(token);
+        }
+        
+        public System.Data.DataTable Plus_Mun50(string table, int offset, string token) {
+            return base.Channel.Plus_Mun50(table, offset, token);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Plus_Mun50Async(string table, int offset, string token) {
+            return base.Channel.Plus_Mun50Async(table, offset, token);
+        }
+        
+        public int Count_table(string table, string token) {
+            return base.Channel.Count_table(table, token);
+        }
+        
+        public System.Threading.Tasks.Task<int> Count_tableAsync(string table, string token) {
+            return base.Channel.Count_tableAsync(table, token);
         }
     }
 }

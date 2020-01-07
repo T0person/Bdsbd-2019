@@ -14,6 +14,7 @@ namespace Client
 {
     public partial class Student : Form
     {
+        Serv.ServClient client = new Serv.ServClient("NetTcpBinding_IServ");
         public Student()
         {
             InitializeComponent();
@@ -21,8 +22,7 @@ namespace Client
 
         private void Exit_button_Click(object sender, EventArgs e)
         {
-            var client = new Serv.ServClient("NetTcpBinding_IServ");
-            client.Delete_Online(Settings.Default["id"].ToString());
+            client.Delete_Online(Settings.Default["token"].ToString());
             Settings.Default["id"] = null;
             Settings.Default["role"] = null;
             Settings.Default.Save();
@@ -31,35 +31,29 @@ namespace Client
 
         private void Close_button_Click(object sender, EventArgs e)
         {
-            var client = new Serv.ServClient("NetTcpBinding_IServ");
-            client.Delete_Online(Settings.Default["id"].ToString());
             Application.Exit();
         }
 
         private void Find_fac_Click(object sender, EventArgs e)
         {
-            var client = new Serv.ServClient("NetTcpBinding_IServ");
-            Fac.Text = client.Fac_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
+            Fac.Text = client.Fac_find_stud(Settings.Default["token"].ToString());
         }
 
         private void Find_spec_Click(object sender, EventArgs e)
         {
-            var client = new Serv.ServClient("NetTcpBinding_IServ");
-            Spec.Text = client.Spec_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
+            Spec.Text = client.Spec_find_stud(Settings.Default["token"].ToString());
         }
 
         private void Find_sal_Click(object sender, EventArgs e)
         {
-            var client = new Serv.ServClient("NetTcpBinding_IServ");
-            Sal.Text = client.Sal_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
+            Sal.Text = client.Sal_find_stud(Settings.Default["token"].ToString());
         }
 
         private void Find_all_Click(object sender, EventArgs e)
         {
-            var client = new Serv.ServClient("NetTcpBinding_IServ");
-            Fac.Text = client.Fac_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
-            Spec.Text = client.Spec_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
-            Sal.Text = client.Sal_find_stud(Convert.ToString(Settings.Default["id"]), Settings.Default["id"].ToString());
+            Fac.Text = client.Fac_find_stud(Settings.Default["token"].ToString());
+            Spec.Text = client.Spec_find_stud(Settings.Default["token"].ToString());
+            Sal.Text = client.Sal_find_stud(Settings.Default["token"].ToString());
         }
 
         private void Student_Load(object sender, EventArgs e)

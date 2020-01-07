@@ -14,6 +14,7 @@ namespace Client
 {
     public partial class Delete : Form
     {
+        Serv.ServClient client = new Serv.ServClient("NetTcpBinding_IServ");
         public Delete()
         {
             InitializeComponent();
@@ -34,12 +35,11 @@ namespace Client
             }
             else
             {
-                var client = new Serv.ServClient("NetTcpBinding_IServ");
-                string del = client.Delete_table(Set_id.Text,Settings.Default["id"].ToString());
+                string del = client.Delete_table(Settings.Default["token"].ToString());
                 if (del == "1")
                 {
                     MessageBox.Show("Все прошло удачно!");
-                    string exit_del = client.Exit_to_del(Set_id.Text, Settings.Default["id"].ToString());
+                    string exit_del = client.Exit_to_del(Settings.Default["token"].ToString());
                     if (exit_del != "1")
                     {
                         Settings.Default["id"] = null;

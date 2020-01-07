@@ -35,6 +35,8 @@
             this.My_sal = new System.Windows.Forms.Button();
             this.My_spec = new System.Windows.Forms.Button();
             this.My_fac = new System.Windows.Forms.Button();
+            this.Mun50 = new System.Windows.Forms.Button();
+            this.Plus50 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,11 +112,37 @@
             this.My_fac.UseVisualStyleBackColor = true;
             this.My_fac.Click += new System.EventHandler(this.My_fac_Click);
             // 
+            // Mun50
+            // 
+            this.Mun50.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Mun50.Location = new System.Drawing.Point(19, 469);
+            this.Mun50.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mun50.Name = "Mun50";
+            this.Mun50.Size = new System.Drawing.Size(191, 35);
+            this.Mun50.TabIndex = 28;
+            this.Mun50.Text = "Назад";
+            this.Mun50.UseVisualStyleBackColor = true;
+            this.Mun50.Click += new System.EventHandler(this.Mun50_Click);
+            // 
+            // Plus50
+            // 
+            this.Plus50.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Plus50.Location = new System.Drawing.Point(19, 404);
+            this.Plus50.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Plus50.Name = "Plus50";
+            this.Plus50.Size = new System.Drawing.Size(191, 35);
+            this.Plus50.TabIndex = 27;
+            this.Plus50.Text = "Дальше";
+            this.Plus50.UseVisualStyleBackColor = true;
+            this.Plus50.Click += new System.EventHandler(this.Plus50_Click);
+            // 
             // Teacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.Mun50);
+            this.Controls.Add(this.Plus50);
             this.Controls.Add(this.Exit_button);
             this.Controls.Add(this.Close_button);
             this.Controls.Add(this.Sal);
@@ -142,5 +170,7 @@
         private System.Windows.Forms.Button My_sal;
         private System.Windows.Forms.Button My_spec;
         private System.Windows.Forms.Button My_fac;
+        private System.Windows.Forms.Button Mun50;
+        private System.Windows.Forms.Button Plus50;
     }
 }

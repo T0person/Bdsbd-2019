@@ -40,14 +40,19 @@
             this.Teachers_button = new System.Windows.Forms.Button();
             this.Students_button = new System.Windows.Forms.Button();
             this.All_button = new System.Windows.Forms.Button();
-            this.Insert = new System.Windows.Forms.Button();
+            this.Plus50 = new System.Windows.Forms.Button();
+            this.Mun50 = new System.Windows.Forms.Button();
+            this.Address_button = new System.Windows.Forms.Button();
+            this.Company_button = new System.Windows.Forms.Button();
+            this.Card_button = new System.Windows.Forms.Button();
+            this.Top_Sal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Delete_button
             // 
             this.Delete_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Delete_button.Location = new System.Drawing.Point(12, 497);
+            this.Delete_button.Location = new System.Drawing.Point(12, 587);
             this.Delete_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Delete_button.Name = "Delete_button";
             this.Delete_button.Size = new System.Drawing.Size(139, 35);
@@ -59,7 +64,7 @@
             // Exit_button
             // 
             this.Exit_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Exit_button.Location = new System.Drawing.Point(12, 592);
+            this.Exit_button.Location = new System.Drawing.Point(12, 682);
             this.Exit_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Exit_button.Name = "Exit_button";
             this.Exit_button.Size = new System.Drawing.Size(139, 62);
@@ -71,7 +76,7 @@
             // Close_button
             // 
             this.Close_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Close_button.Location = new System.Drawing.Point(12, 547);
+            this.Close_button.Location = new System.Drawing.Point(12, 637);
             this.Close_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Close_button.Name = "Close_button";
             this.Close_button.Size = new System.Drawing.Size(139, 35);
@@ -115,7 +120,7 @@
             // Update_button
             // 
             this.Update_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Update_button.Location = new System.Drawing.Point(12, 447);
+            this.Update_button.Location = new System.Drawing.Point(12, 537);
             this.Update_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Update_button.Name = "Update_button";
             this.Update_button.Size = new System.Drawing.Size(139, 35);
@@ -184,24 +189,89 @@
             this.All_button.UseVisualStyleBackColor = true;
             this.All_button.Click += new System.EventHandler(this.All_button_Click);
             // 
-            // Insert
+            // Plus50
             // 
-            this.Insert.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Insert.Location = new System.Drawing.Point(12, 402);
-            this.Insert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Insert.Name = "Insert";
-            this.Insert.Size = new System.Drawing.Size(139, 35);
-            this.Insert.TabIndex = 24;
-            this.Insert.Text = "Вставить";
-            this.Insert.UseVisualStyleBackColor = true;
-            this.Insert.Click += new System.EventHandler(this.Insert_Click);
+            this.Plus50.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Plus50.Location = new System.Drawing.Point(624, 688);
+            this.Plus50.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Plus50.Name = "Plus50";
+            this.Plus50.Size = new System.Drawing.Size(139, 35);
+            this.Plus50.TabIndex = 25;
+            this.Plus50.Text = "Дальше";
+            this.Plus50.UseVisualStyleBackColor = true;
+            this.Plus50.Click += new System.EventHandler(this.Plus50_Click);
+            // 
+            // Mun50
+            // 
+            this.Mun50.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Mun50.Location = new System.Drawing.Point(466, 688);
+            this.Mun50.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mun50.Name = "Mun50";
+            this.Mun50.Size = new System.Drawing.Size(139, 35);
+            this.Mun50.TabIndex = 26;
+            this.Mun50.Text = "Назад";
+            this.Mun50.UseVisualStyleBackColor = true;
+            this.Mun50.Click += new System.EventHandler(this.Mun50_Click);
+            // 
+            // Address_button
+            // 
+            this.Address_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Address_button.Location = new System.Drawing.Point(12, 357);
+            this.Address_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Address_button.Name = "Address_button";
+            this.Address_button.Size = new System.Drawing.Size(139, 35);
+            this.Address_button.TabIndex = 27;
+            this.Address_button.Text = "Адрес";
+            this.Address_button.UseVisualStyleBackColor = true;
+            this.Address_button.Click += new System.EventHandler(this.Address_button_Click);
+            // 
+            // Company_button
+            // 
+            this.Company_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Company_button.Location = new System.Drawing.Point(12, 402);
+            this.Company_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Company_button.Name = "Company_button";
+            this.Company_button.Size = new System.Drawing.Size(139, 35);
+            this.Company_button.TabIndex = 28;
+            this.Company_button.Text = "Компания";
+            this.Company_button.UseVisualStyleBackColor = true;
+            this.Company_button.Click += new System.EventHandler(this.Company_button_Click);
+            // 
+            // Card_button
+            // 
+            this.Card_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Card_button.Location = new System.Drawing.Point(12, 447);
+            this.Card_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Card_button.Name = "Card_button";
+            this.Card_button.Size = new System.Drawing.Size(139, 35);
+            this.Card_button.TabIndex = 29;
+            this.Card_button.Text = "Номер карты";
+            this.Card_button.UseVisualStyleBackColor = true;
+            this.Card_button.Click += new System.EventHandler(this.Card_button_Click);
+            // 
+            // Top_Sal
+            // 
+            this.Top_Sal.AutoSize = true;
+            this.Top_Sal.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Top_Sal.Location = new System.Drawing.Point(836, 697);
+            this.Top_Sal.Name = "Top_Sal";
+            this.Top_Sal.Size = new System.Drawing.Size(159, 28);
+            this.Top_Sal.TabIndex = 30;
+            this.Top_Sal.Text = "Монеток всего:";
+            this.Top_Sal.Visible = false;
+            this.Top_Sal.Click += new System.EventHandler(this.Top_Sal_Click);
             // 
             // Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 661);
-            this.Controls.Add(this.Insert);
+            this.ClientSize = new System.Drawing.Size(1175, 791);
+            this.Controls.Add(this.Top_Sal);
+            this.Controls.Add(this.Card_button);
+            this.Controls.Add(this.Company_button);
+            this.Controls.Add(this.Address_button);
+            this.Controls.Add(this.Mun50);
+            this.Controls.Add(this.Plus50);
             this.Controls.Add(this.Delete_button);
             this.Controls.Add(this.Exit_button);
             this.Controls.Add(this.Close_button);
@@ -221,6 +291,7 @@
             this.Load += new System.EventHandler(this.Staff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -238,6 +309,11 @@
         private System.Windows.Forms.Button Teachers_button;
         private System.Windows.Forms.Button Students_button;
         private System.Windows.Forms.Button All_button;
-        private System.Windows.Forms.Button Insert;
+        private System.Windows.Forms.Button Plus50;
+        private System.Windows.Forms.Button Mun50;
+        private System.Windows.Forms.Button Address_button;
+        private System.Windows.Forms.Button Company_button;
+        private System.Windows.Forms.Button Card_button;
+        private System.Windows.Forms.Label Top_Sal;
     }
 }

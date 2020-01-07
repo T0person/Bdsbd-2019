@@ -14,6 +14,7 @@ namespace Client
 {
     public partial class Login_form : Form
     {
+        Serv.ServClient client = new Serv.ServClient("NetTcpBinding_IServ");
         public Login_form()
         {
             InitializeComponent();
@@ -26,32 +27,33 @@ namespace Client
 
         private void Ok_button_Click(object sender, EventArgs e)
         {
+            
             if (Login_box.Text == "" || Password_box.Text == "")
                 MessageBox.Show("Поля не заполнены!");
             else
             {
-                var client = new Serv.ServClient("NetTcpBinding_IServ");
-                string id = client.LoginForm(Login_box.Text, Password_box.Text);
-                if (id != "-1")
+                string[] id_tok = client.LoginForm(Login_box.Text, Password_box.Text);
+                if (id_tok[0] == "0")
+                    MessageBox.Show("Такой пользователь уже есть!");
+                else if (id_tok[0] != "-1")
                 {
-                    Settings.Default["id"] = id;
-                    char role = client.LoginForm_load(id);
-                    Settings.Default["role"] = role;
+                    Settings.Default["id"] = id_tok[0];
+                    Settings.Default["role"] = Convert.ToChar(id_tok[2]);
+                    Settings.Default["token"] = id_tok[1];
                     Settings.Default.Save();
-                    client.Insert_Online(Settings.Default["id"].ToString());
-                    if (role == '1')
+                    if (Convert.ToChar(Settings.Default["role"]) == '1')
                     {
                         Hide();
                         Student nextform = new Student();
                         nextform.Show();
                     }
-                    else if (role == '2')
+                    else if (Convert.ToChar(Settings.Default["role"]) == '2')
                     {
                         Hide();
                         Teacher nextform = new Teacher();
                         nextform.Show();
                     }
-                    else if (role == '3')
+                    else if (Convert.ToChar(Settings.Default["role"]) == '3')
                     {
                         Hide();
                         Staff nextform = new Staff();

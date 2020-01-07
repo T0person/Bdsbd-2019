@@ -98,6 +98,7 @@
             this.Set_id.Name = "Set_id";
             this.Set_id.Size = new System.Drawing.Size(70, 26);
             this.Set_id.TabIndex = 15;
+            this.Set_id.TextChanged += new System.EventHandler(this.Set_id_TextChanged);
             // 
             // Element
             // 
@@ -143,7 +144,10 @@
             "staff",
             "specials",
             "faculties",
-            "salary"});
+            "salary",
+            "table1",
+            "table2",
+            "table3"});
             this.Table_box.Location = new System.Drawing.Point(24, 62);
             this.Table_box.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Table_box.Name = "Table_box";
