@@ -109,23 +109,23 @@
   <wsdl:message name="IServ_Take_table_salary_OutputMessage">
     <wsdl:part name="parameters" element="tns:Take_table_salaryResponse" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_table_table1_InputMessage">
-    <wsdl:part name="parameters" element="tns:Take_table_table1" />
+  <wsdl:message name="IServ_Take_table_address_InputMessage">
+    <wsdl:part name="parameters" element="tns:Take_table_address" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_table_table1_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Take_table_table1Response" />
+  <wsdl:message name="IServ_Take_table_address_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Take_table_addressResponse" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_table_table2_InputMessage">
-    <wsdl:part name="parameters" element="tns:Take_table_table2" />
+  <wsdl:message name="IServ_Take_table_company_InputMessage">
+    <wsdl:part name="parameters" element="tns:Take_table_company" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_table_table2_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Take_table_table2Response" />
+  <wsdl:message name="IServ_Take_table_company_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Take_table_companyResponse" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_table_table3_InputMessage">
-    <wsdl:part name="parameters" element="tns:Take_table_table3" />
+  <wsdl:message name="IServ_Take_table_card_number_InputMessage">
+    <wsdl:part name="parameters" element="tns:Take_table_card_number" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_table_table3_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Take_table_table3Response" />
+  <wsdl:message name="IServ_Take_table_card_number_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Take_table_card_numberResponse" />
   </wsdl:message>
   <wsdl:message name="IServ_Take_rows_people_InputMessage">
     <wsdl:part name="parameters" element="tns:Take_rows_people" />
@@ -169,23 +169,23 @@
   <wsdl:message name="IServ_Take_rows_salary_OutputMessage">
     <wsdl:part name="parameters" element="tns:Take_rows_salaryResponse" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_rows_table1_InputMessage">
-    <wsdl:part name="parameters" element="tns:Take_rows_table1" />
+  <wsdl:message name="IServ_Take_rows_address_InputMessage">
+    <wsdl:part name="parameters" element="tns:Take_rows_address" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_rows_table1_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Take_rows_table1Response" />
+  <wsdl:message name="IServ_Take_rows_address_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Take_rows_addressResponse" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_rows_table2_InputMessage">
-    <wsdl:part name="parameters" element="tns:Take_rows_table2" />
+  <wsdl:message name="IServ_Take_rows_company_InputMessage">
+    <wsdl:part name="parameters" element="tns:Take_rows_company" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_rows_table2_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Take_rows_table2Response" />
+  <wsdl:message name="IServ_Take_rows_company_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Take_rows_companyResponse" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_rows_table3_InputMessage">
-    <wsdl:part name="parameters" element="tns:Take_rows_table3" />
+  <wsdl:message name="IServ_Take_rows_card_number_InputMessage">
+    <wsdl:part name="parameters" element="tns:Take_rows_card_number" />
   </wsdl:message>
-  <wsdl:message name="IServ_Take_rows_table3_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Take_rows_table3Response" />
+  <wsdl:message name="IServ_Take_rows_card_number_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Take_rows_card_numberResponse" />
   </wsdl:message>
   <wsdl:message name="IServ_Update_table_people_InputMessage">
     <wsdl:part name="parameters" element="tns:Update_table_people" />
@@ -229,23 +229,23 @@
   <wsdl:message name="IServ_Update_table_salary_OutputMessage">
     <wsdl:part name="parameters" element="tns:Update_table_salaryResponse" />
   </wsdl:message>
-  <wsdl:message name="IServ_Update_table_table1_InputMessage">
-    <wsdl:part name="parameters" element="tns:Update_table_table1" />
+  <wsdl:message name="IServ_Update_table_address_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_table_address" />
   </wsdl:message>
-  <wsdl:message name="IServ_Update_table_table1_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Update_table_table1Response" />
+  <wsdl:message name="IServ_Update_table_address_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_table_addressResponse" />
   </wsdl:message>
-  <wsdl:message name="IServ_Update_table_table2_InputMessage">
-    <wsdl:part name="parameters" element="tns:Update_table_table2" />
+  <wsdl:message name="IServ_Update_table_company_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_table_company" />
   </wsdl:message>
-  <wsdl:message name="IServ_Update_table_table2_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Update_table_table2Response" />
+  <wsdl:message name="IServ_Update_table_company_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_table_companyResponse" />
   </wsdl:message>
-  <wsdl:message name="IServ_Update_table_table3_InputMessage">
-    <wsdl:part name="parameters" element="tns:Update_table_table3" />
+  <wsdl:message name="IServ_Update_table_card_number_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_table_card_number" />
   </wsdl:message>
-  <wsdl:message name="IServ_Update_table_table3_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Update_table_table3Response" />
+  <wsdl:message name="IServ_Update_table_card_number_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_table_card_numberResponse" />
   </wsdl:message>
   <wsdl:message name="IServ_Delete_table_InputMessage">
     <wsdl:part name="parameters" element="tns:Delete_table" />
@@ -332,17 +332,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_table_salary" message="tns:IServ_Take_table_salary_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_table_salaryResponse" message="tns:IServ_Take_table_salary_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Take_table_table1">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_table_table1" message="tns:IServ_Take_table_table1_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_table_table1Response" message="tns:IServ_Take_table_table1_OutputMessage" />
+    <wsdl:operation name="Take_table_address">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_table_address" message="tns:IServ_Take_table_address_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_table_addressResponse" message="tns:IServ_Take_table_address_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Take_table_table2">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_table_table2" message="tns:IServ_Take_table_table2_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_table_table2Response" message="tns:IServ_Take_table_table2_OutputMessage" />
+    <wsdl:operation name="Take_table_company">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_table_company" message="tns:IServ_Take_table_company_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_table_companyResponse" message="tns:IServ_Take_table_company_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Take_table_table3">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_table_table3" message="tns:IServ_Take_table_table3_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_table_table3Response" message="tns:IServ_Take_table_table3_OutputMessage" />
+    <wsdl:operation name="Take_table_card_number">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_table_card_number" message="tns:IServ_Take_table_card_number_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_table_card_numberResponse" message="tns:IServ_Take_table_card_number_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Take_rows_people">
       <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_rows_people" message="tns:IServ_Take_rows_people_InputMessage" />
@@ -372,17 +372,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_rows_salary" message="tns:IServ_Take_rows_salary_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_rows_salaryResponse" message="tns:IServ_Take_rows_salary_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Take_rows_table1">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_rows_table1" message="tns:IServ_Take_rows_table1_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_rows_table1Response" message="tns:IServ_Take_rows_table1_OutputMessage" />
+    <wsdl:operation name="Take_rows_address">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_rows_address" message="tns:IServ_Take_rows_address_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_rows_addressResponse" message="tns:IServ_Take_rows_address_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Take_rows_table2">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_rows_table2" message="tns:IServ_Take_rows_table2_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_rows_table2Response" message="tns:IServ_Take_rows_table2_OutputMessage" />
+    <wsdl:operation name="Take_rows_company">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_rows_company" message="tns:IServ_Take_rows_company_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_rows_companyResponse" message="tns:IServ_Take_rows_company_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Take_rows_table3">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_rows_table3" message="tns:IServ_Take_rows_table3_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_rows_table3Response" message="tns:IServ_Take_rows_table3_OutputMessage" />
+    <wsdl:operation name="Take_rows_card_number">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Take_rows_card_number" message="tns:IServ_Take_rows_card_number_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Take_rows_card_numberResponse" message="tns:IServ_Take_rows_card_number_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Update_table_people">
       <wsdl:input wsaw:Action="http://tempuri.org/IServ/Update_table_people" message="tns:IServ_Update_table_people_InputMessage" />
@@ -412,17 +412,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServ/Update_table_salary" message="tns:IServ_Update_table_salary_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServ/Update_table_salaryResponse" message="tns:IServ_Update_table_salary_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Update_table_table1">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Update_table_table1" message="tns:IServ_Update_table_table1_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Update_table_table1Response" message="tns:IServ_Update_table_table1_OutputMessage" />
+    <wsdl:operation name="Update_table_address">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Update_table_address" message="tns:IServ_Update_table_address_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Update_table_addressResponse" message="tns:IServ_Update_table_address_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Update_table_table2">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Update_table_table2" message="tns:IServ_Update_table_table2_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Update_table_table2Response" message="tns:IServ_Update_table_table2_OutputMessage" />
+    <wsdl:operation name="Update_table_company">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Update_table_company" message="tns:IServ_Update_table_company_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Update_table_companyResponse" message="tns:IServ_Update_table_company_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Update_table_table3">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Update_table_table3" message="tns:IServ_Update_table_table3_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Update_table_table3Response" message="tns:IServ_Update_table_table3_OutputMessage" />
+    <wsdl:operation name="Update_table_card_number">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServ/Update_table_card_number" message="tns:IServ_Update_table_card_number_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServ/Update_table_card_numberResponse" message="tns:IServ_Update_table_card_number_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Delete_table">
       <wsdl:input wsaw:Action="http://tempuri.org/IServ/Delete_table" message="tns:IServ_Delete_table_InputMessage" />
@@ -559,8 +559,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_table_table1">
-      <soap:operation soapAction="http://tempuri.org/IServ/Take_table_table1" style="document" />
+    <wsdl:operation name="Take_table_address">
+      <soap:operation soapAction="http://tempuri.org/IServ/Take_table_address" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -568,8 +568,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_table_table2">
-      <soap:operation soapAction="http://tempuri.org/IServ/Take_table_table2" style="document" />
+    <wsdl:operation name="Take_table_company">
+      <soap:operation soapAction="http://tempuri.org/IServ/Take_table_company" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -577,8 +577,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_table_table3">
-      <soap:operation soapAction="http://tempuri.org/IServ/Take_table_table3" style="document" />
+    <wsdl:operation name="Take_table_card_number">
+      <soap:operation soapAction="http://tempuri.org/IServ/Take_table_card_number" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -649,8 +649,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_rows_table1">
-      <soap:operation soapAction="http://tempuri.org/IServ/Take_rows_table1" style="document" />
+    <wsdl:operation name="Take_rows_address">
+      <soap:operation soapAction="http://tempuri.org/IServ/Take_rows_address" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -658,8 +658,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_rows_table2">
-      <soap:operation soapAction="http://tempuri.org/IServ/Take_rows_table2" style="document" />
+    <wsdl:operation name="Take_rows_company">
+      <soap:operation soapAction="http://tempuri.org/IServ/Take_rows_company" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -667,8 +667,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_rows_table3">
-      <soap:operation soapAction="http://tempuri.org/IServ/Take_rows_table3" style="document" />
+    <wsdl:operation name="Take_rows_card_number">
+      <soap:operation soapAction="http://tempuri.org/IServ/Take_rows_card_number" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -739,8 +739,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Update_table_table1">
-      <soap:operation soapAction="http://tempuri.org/IServ/Update_table_table1" style="document" />
+    <wsdl:operation name="Update_table_address">
+      <soap:operation soapAction="http://tempuri.org/IServ/Update_table_address" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -748,8 +748,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Update_table_table2">
-      <soap:operation soapAction="http://tempuri.org/IServ/Update_table_table2" style="document" />
+    <wsdl:operation name="Update_table_company">
+      <soap:operation soapAction="http://tempuri.org/IServ/Update_table_company" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -757,8 +757,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Update_table_table3">
-      <soap:operation soapAction="http://tempuri.org/IServ/Update_table_table3" style="document" />
+    <wsdl:operation name="Update_table_card_number">
+      <soap:operation soapAction="http://tempuri.org/IServ/Update_table_card_number" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -932,8 +932,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_table_table1">
-      <soap12:operation soapAction="http://tempuri.org/IServ/Take_table_table1" style="document" />
+    <wsdl:operation name="Take_table_address">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Take_table_address" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -941,8 +941,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_table_table2">
-      <soap12:operation soapAction="http://tempuri.org/IServ/Take_table_table2" style="document" />
+    <wsdl:operation name="Take_table_company">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Take_table_company" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -950,8 +950,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_table_table3">
-      <soap12:operation soapAction="http://tempuri.org/IServ/Take_table_table3" style="document" />
+    <wsdl:operation name="Take_table_card_number">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Take_table_card_number" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1022,8 +1022,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_rows_table1">
-      <soap12:operation soapAction="http://tempuri.org/IServ/Take_rows_table1" style="document" />
+    <wsdl:operation name="Take_rows_address">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Take_rows_address" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1031,8 +1031,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_rows_table2">
-      <soap12:operation soapAction="http://tempuri.org/IServ/Take_rows_table2" style="document" />
+    <wsdl:operation name="Take_rows_company">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Take_rows_company" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1040,8 +1040,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Take_rows_table3">
-      <soap12:operation soapAction="http://tempuri.org/IServ/Take_rows_table3" style="document" />
+    <wsdl:operation name="Take_rows_card_number">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Take_rows_card_number" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1112,8 +1112,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Update_table_table1">
-      <soap12:operation soapAction="http://tempuri.org/IServ/Update_table_table1" style="document" />
+    <wsdl:operation name="Update_table_address">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Update_table_address" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1121,8 +1121,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Update_table_table2">
-      <soap12:operation soapAction="http://tempuri.org/IServ/Update_table_table2" style="document" />
+    <wsdl:operation name="Update_table_company">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Update_table_company" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1130,8 +1130,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Update_table_table3">
-      <soap12:operation soapAction="http://tempuri.org/IServ/Update_table_table3" style="document" />
+    <wsdl:operation name="Update_table_card_number">
+      <soap12:operation soapAction="http://tempuri.org/IServ/Update_table_card_number" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

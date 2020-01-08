@@ -12,7 +12,7 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-06 16:22:20Z" FixCategory="NonBreaking">
+            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-08 10:21:01Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="G:\Kurs\Client" File="Delete.Designer.cs" Line="15">'Delete' содержит поле 'Delete.client' типа IDisposable: 'ServClient'. Замените метод Dispose для 'Delete' на вызов Dispose или Close по этому полю.</Issue>
             </Message>
            </Messages>
@@ -23,7 +23,7 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-06 16:22:20Z" FixCategory="NonBreaking">
+            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-08 10:21:01Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="G:\Kurs\Client" File="Login_form.Designer.cs" Line="15">'Login_form' содержит поле 'Login_form.client' типа IDisposable: 'ServClient'. Замените метод Dispose для 'Login_form' на вызов Dispose или Close по этому полю.</Issue>
             </Message>
            </Messages>
@@ -34,7 +34,7 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-06 16:22:20Z" FixCategory="NonBreaking">
+            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-08 10:21:01Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="G:\Kurs\Client" File="Staff.Designer.cs" Line="15">'Staff' содержит поле 'Staff.client' типа IDisposable: 'ServClient'. Замените метод Dispose для 'Staff' на вызов Dispose или Close по этому полю.</Issue>
             </Message>
            </Messages>
@@ -45,7 +45,7 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-06 16:22:20Z" FixCategory="NonBreaking">
+            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-08 10:21:01Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="G:\Kurs\Client" File="Student.Designer.cs" Line="15">'Student' содержит поле 'Student.client' типа IDisposable: 'ServClient'. Замените метод Dispose для 'Student' на вызов Dispose или Close по этому полю.</Issue>
             </Message>
            </Messages>
@@ -56,7 +56,7 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-06 16:22:20Z" FixCategory="NonBreaking">
+            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-08 10:21:01Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="G:\Kurs\Client" File="Teacher.Designer.cs" Line="15">'Teacher' содержит поле 'Teacher.client' типа IDisposable: 'ServClient'. Замените метод Dispose для 'Teacher' на вызов Dispose или Close по этому полю.</Issue>
             </Message>
            </Messages>
@@ -67,7 +67,7 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-06 16:22:20Z" FixCategory="NonBreaking">
+            <Message Id="client" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-01-08 10:21:01Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="G:\Kurs\Client" File="Update.Designer.cs" Line="15">'Update' содержит поле 'Update.client' типа IDisposable: 'ServClient'. Замените метод Dispose для 'Update' на вызов Dispose или Close по этому полю.</Issue>
             </Message>
            </Messages>

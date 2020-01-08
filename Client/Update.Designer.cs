@@ -145,9 +145,9 @@
             "specials",
             "faculties",
             "salary",
-            "table1",
-            "table2",
-            "table3"});
+            "address",
+            "company",
+            "card_number"});
             this.Table_box.Location = new System.Drawing.Point(24, 62);
             this.Table_box.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Table_box.Name = "Table_box";

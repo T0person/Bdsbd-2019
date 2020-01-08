@@ -24,7 +24,7 @@ namespace Serv
             string[] str = new string[3];
             var role = '0';
             var rand = new Random();
-            MySqlCommand command = new MySqlCommand("SELECT id FROM table1 WHERE email = @uL", SqlConnection);
+            MySqlCommand command = new MySqlCommand("SELECT id FROM address WHERE email = @uL", SqlConnection);
             command.Parameters.AddWithValue("@uL", login);
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
@@ -328,14 +328,14 @@ namespace Serv
             }
         }
 
-        public DataTable Take_table_table1(string token)
+        public DataTable Take_table_address(string token)
         {
             SqlConnection.Open();
             if (Select_Online(token) != null)
             {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM table1 limit 50", SqlConnection);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM address limit 50", SqlConnection);
                 MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("table1");
+                DataTable dt = new DataTable("address");
                 addapter.Fill(dt);
                 SqlConnection.Close();
                 return dt;
@@ -347,14 +347,14 @@ namespace Serv
             }
         }
 
-        public DataTable Take_table_table2(string token)
+        public DataTable Take_table_company(string token)
         {
             SqlConnection.Open();
             if (Select_Online(token) != null)
             {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM table2 limit 50", SqlConnection);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM company limit 50", SqlConnection);
                 MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("table2");
+                DataTable dt = new DataTable("company");
                 addapter.Fill(dt);
                 SqlConnection.Close();
                 return dt;
@@ -366,14 +366,14 @@ namespace Serv
             }
         }
 
-        public DataTable Take_table_table3(string token)
+        public DataTable Take_table_card_number(string token)
         {
             SqlConnection.Open();
             if (Select_Online(token) != null)
             {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM table3 limit 50", SqlConnection);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM card_number limit 50", SqlConnection);
                 MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("table3");
+                DataTable dt = new DataTable("card_number");
                 addapter.Fill(dt);
                 SqlConnection.Close();
                 return dt;
@@ -463,34 +463,34 @@ namespace Serv
             return dt;
         }
 
-        public DataTable Take_rows_table1()
+        public DataTable Take_rows_address()
         {
             SqlConnection.Open();
-            MySqlCommand command = new MySqlCommand("DESCRIBE table1", SqlConnection);
+            MySqlCommand command = new MySqlCommand("DESCRIBE address", SqlConnection);
             MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-            DataTable dt = new DataTable("table1");
+            DataTable dt = new DataTable("address");
             addapter.Fill(dt);
             SqlConnection.Close();
             return dt;
         }
 
-        public DataTable Take_rows_table2()
+        public DataTable Take_rows_company()
         {
             SqlConnection.Open();
-            MySqlCommand command = new MySqlCommand("DESCRIBE table2", SqlConnection);
+            MySqlCommand command = new MySqlCommand("DESCRIBE company", SqlConnection);
             MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-            DataTable dt = new DataTable("table2");
+            DataTable dt = new DataTable("company");
             addapter.Fill(dt);
             SqlConnection.Close();
             return dt;
         }
 
-        public DataTable Take_rows_table3()
+        public DataTable Take_rows_card_number()
         {
             SqlConnection.Open();
-            MySqlCommand command = new MySqlCommand("DESCRIBE table3", SqlConnection);
+            MySqlCommand command = new MySqlCommand("DESCRIBE card_number", SqlConnection);
             MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-            DataTable dt = new DataTable("table3");
+            DataTable dt = new DataTable("card_number");
             addapter.Fill(dt);
             SqlConnection.Close();
             return dt;
@@ -760,12 +760,12 @@ namespace Serv
             }
         }
 
-        public char Update_table_table1(string table, string name_set, string set, string where, string token)
+        public char Update_table_address(string table, string name_set, string set, string where, string token)
         {
             SqlConnection.Open();
             if (Select_Online(token) != null)
             {
-                MySqlCommand command = new MySqlCommand("SELECT id FROM table1 WHERE id = @where", SqlConnection);
+                MySqlCommand command = new MySqlCommand("SELECT id FROM address WHERE id = @where", SqlConnection);
                 command.Parameters.AddWithValue("@where", where);
                 MySqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
@@ -775,19 +775,19 @@ namespace Serv
                     switch (name_set)
                     {
                         case "id":
-                            q = Update_table1_id(set, where);
+                            q = Update_address_id(set, where);
                             SqlConnection.Close();
                             return q;
                         case "address":
-                            q = Update_table1_address(set, where);
+                            q = Update_address_address(set, where);
                             SqlConnection.Close();
                             return q;
                         case "email":
-                            q = Update_table1_email(set, where);
+                            q = Update_address_email(set, where);
                             SqlConnection.Close();
                             return q;
                         default:
-                            q = Update_table1_registration(set, where);
+                            q = Update_address_registration(set, where);
                             SqlConnection.Close();
                             return q;
                     }
@@ -801,12 +801,12 @@ namespace Serv
                 return '0';
             }
         }
-        public char Update_table_table2(string table, string name_set, string set, string where, string token)
+        public char Update_table_company(string table, string name_set, string set, string where, string token)
         {
             SqlConnection.Open();
             if (Select_Online(token) != null)
             {
-                MySqlCommand command = new MySqlCommand("SELECT id FROM table2 WHERE id = @where", SqlConnection);
+                MySqlCommand command = new MySqlCommand("SELECT id FROM company WHERE id = @where", SqlConnection);
                 command.Parameters.AddWithValue("@where", where);
                 MySqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
@@ -816,23 +816,23 @@ namespace Serv
                     switch (name_set)
                     {
                         case "id":
-                            q = Update_table2_id(set, where);
+                            q = Update_company_id(set, where);
                             SqlConnection.Close();
                             return q;
                         case "b_date":
-                            q = Update_table2_b_date(set, where);
+                            q = Update_company_b_date(set, where);
                             SqlConnection.Close();
                             return q;
                         case "about":
-                            q = Update_table2_about(set, where);
+                            q = Update_company_about(set, where);
                             SqlConnection.Close();
                             return q;
                         case "phoneNumber":
-                            q = Update_table2_phoneNumber(set, where);
+                            q = Update_company_phoneNumber(set, where);
                             SqlConnection.Close();
                             return q;
                         default:
-                            q = Update_table2_company(set, where);
+                            q = Update_company_company(set, where);
                             SqlConnection.Close();
                             return q;
                     }
@@ -846,12 +846,12 @@ namespace Serv
                 return '0';
             }
         }
-        public char Update_table_table3(string table, string name_set, string set, string where, string token)
+        public char Update_table_card_number(string table, string name_set, string set, string where, string token)
         {
             SqlConnection.Open();
             if (Select_Online(token) != null)
             {
-                MySqlCommand command = new MySqlCommand("SELECT id FROM table3 WHERE id = @where", SqlConnection);
+                MySqlCommand command = new MySqlCommand("SELECT id FROM card_number WHERE id = @where", SqlConnection);
                 command.Parameters.AddWithValue("@where", where);
                 MySqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
@@ -861,11 +861,11 @@ namespace Serv
                     switch (name_set)
                     {
                         case "id":
-                            q = Update_table3_id(set, where);
+                            q = Update_card_number_id(set, where);
                             SqlConnection.Close();
                             return q;
                         default:
-                            q = Update_table3_card_number(set, where);
+                            q = Update_card_number_card_number(set, where);
                             SqlConnection.Close();
                             return q;
                     }
@@ -985,12 +985,12 @@ namespace Serv
                         return Roll_faculties(offset);
                     case "salary":
                         return Roll_salary(offset);
-                    case "table1":
-                        return Roll_table1(offset);
-                    case "table2":
-                        return Roll_table2(offset);
-                    case "table3":
-                        return Roll_table3(offset);
+                    case "address":
+                        return Roll_address(offset);
+                    case "company":
+                        return Roll_company(offset);
+                    case "card_number":
+                        return Roll_card_number(offset);
                     default:
                         return null;
                 }
@@ -1024,12 +1024,12 @@ namespace Serv
                         return Count_faculties();
                     case "salary":
                         return Count_salary();
-                    case "table1":
-                        return Count_table1();
-                    case "table2":
-                        return Count_table2();
-                    case "table3":
-                        return Count_table3();
+                    case "address":
+                        return Count_address();
+                    case "company":
+                        return Count_company();
+                    case "card_number":
+                        return Count_card_number();
                     default:
                         return -1;
                 }
@@ -1278,30 +1278,30 @@ namespace Serv
             return '1';
         }
 
-        //---Изменение id table1
-        private char Update_table1_id(string set, string where)
+        //---Изменение id address
+        private char Update_address_id(string set, string where)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE table1 SET id = @set  WHERE id = @where", SqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE address SET id = @set  WHERE id = @where", SqlConnection);
             command.Parameters.AddWithValue("@set", set);
             command.Parameters.AddWithValue("@where", where);
             command.ExecuteNonQuery();
             return '1';
         }
 
-        //---Изменение id table2
-        private char Update_table2_id(string set, string where)
+        //---Изменение id company
+        private char Update_company_id(string set, string where)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE table2 SET id = @set  WHERE id = @where", SqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE company SET id = @set  WHERE id = @where", SqlConnection);
             command.Parameters.AddWithValue("@set", set);
             command.Parameters.AddWithValue("@where", where);
             command.ExecuteNonQuery();
             return '1';
         }
 
-        //---Изменение id table3
-        private char Update_table3_id(string set, string where)
+        //---Изменение id card_number
+        private char Update_card_number_id(string set, string where)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE table3 SET id = @set  WHERE id = @where", SqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE card_number SET id = @set  WHERE id = @where", SqlConnection);
             command.Parameters.AddWithValue("@set", set);
             command.Parameters.AddWithValue("@where", where);
             command.ExecuteNonQuery();
@@ -1396,75 +1396,75 @@ namespace Serv
         }
 
         //---Изменение простого salary
-        private char Update_table1_address(string set, string where)
+        private char Update_address_address(string set, string where)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE table1 SET address = @set  WHERE id = @where", SqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE address SET address = @set  WHERE id = @where", SqlConnection);
             command.Parameters.AddWithValue("@set", set);
             command.Parameters.AddWithValue("@where", where);
             command.ExecuteNonQuery();
             return '1';
         }
 
-        //---Изменение простого table1
-        private char Update_table1_email(string set, string where)
+        //---Изменение простого address
+        private char Update_address_email(string set, string where)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE table1 SET email = @set  WHERE id = @where", SqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE address SET email = @set  WHERE id = @where", SqlConnection);
             command.Parameters.AddWithValue("@set", set);
             command.Parameters.AddWithValue("@where", where);
             command.ExecuteNonQuery();
             return '1';
         }
 
-        private char Update_table1_registration(string set, string where)
+        private char Update_address_registration(string set, string where)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE table1 SET registration = @set  WHERE id = @where", SqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE address SET registration = @set  WHERE id = @where", SqlConnection);
             command.Parameters.AddWithValue("@set", set);
             command.Parameters.AddWithValue("@where", where);
             command.ExecuteNonQuery();
             return '1';
         }
 
-        //---Изменение простого table2
-        private char Update_table2_b_date(string set, string where)
+        //---Изменение простого company
+        private char Update_company_b_date(string set, string where)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE table2 SET b_date = @set  WHERE id = @where", SqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE company SET b_date = @set  WHERE id = @where", SqlConnection);
             command.Parameters.AddWithValue("@set", set);
             command.Parameters.AddWithValue("@where", where);
             command.ExecuteNonQuery();
             return '1';
         }
 
-        private char Update_table2_about(string set, string where)
+        private char Update_company_about(string set, string where)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE table2 SET about = @set  WHERE id = @where", SqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE company SET about = @set  WHERE id = @where", SqlConnection);
             command.Parameters.AddWithValue("@set", set);
             command.Parameters.AddWithValue("@where", where);
             command.ExecuteNonQuery();
             return '1';
         }
 
-        private char Update_table2_phoneNumber(string set, string where)
+        private char Update_company_phoneNumber(string set, string where)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE table2 SET phoneNumber = @set  WHERE id = @where", SqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE company SET phoneNumber = @set  WHERE id = @where", SqlConnection);
             command.Parameters.AddWithValue("@set", set);
             command.Parameters.AddWithValue("@where", where);
             command.ExecuteNonQuery();
             return '1';
         }
 
-        private char Update_table2_company(string set, string where)
+        private char Update_company_company(string set, string where)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE table2 SET company = @set  WHERE id = @where", SqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE company SET company = @set  WHERE id = @where", SqlConnection);
             command.Parameters.AddWithValue("@set", set);
             command.Parameters.AddWithValue("@where", where);
             command.ExecuteNonQuery();
             return '1';
         }
 
-        //---Изменение простого table3
-        private char Update_table3_card_number(string set, string where)
+        //---Изменение простого card_number
+        private char Update_card_number_card_number(string set, string where)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE table3 SET card_number = @set  WHERE id = @where", SqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE card_number SET card_number = @set  WHERE id = @where", SqlConnection);
             command.Parameters.AddWithValue("@set", set);
             command.Parameters.AddWithValue("@where", where);
             command.ExecuteNonQuery();
@@ -1556,37 +1556,37 @@ namespace Serv
             return dt;
         }
 
-        private DataTable Roll_table1(int offset)
+        private DataTable Roll_address(int offset)
         {
-            MySqlCommand command = new MySqlCommand("SELECT * FROM table1 limit 50 offset @offset", SqlConnection);
+            MySqlCommand command = new MySqlCommand("SELECT * FROM address limit 50 offset @offset", SqlConnection);
             command.Parameters.AddWithValue("@offset", offset);
             command.ExecuteNonQuery();
             MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-            DataTable dt = new DataTable("table1");
+            DataTable dt = new DataTable("address");
             addapter.Fill(dt);
             SqlConnection.Close();
             return dt;
         }
 
-        private DataTable Roll_table2(int offset)
+        private DataTable Roll_company(int offset)
         {
-            MySqlCommand command = new MySqlCommand("SELECT * FROM table2 limit 50 offset @offset", SqlConnection);
+            MySqlCommand command = new MySqlCommand("SELECT * FROM company limit 50 offset @offset", SqlConnection);
             command.Parameters.AddWithValue("@offset", offset);
             command.ExecuteNonQuery();
             MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-            DataTable dt = new DataTable("table2");
+            DataTable dt = new DataTable("company");
             addapter.Fill(dt);
             SqlConnection.Close();
             return dt;
         }
 
-        private DataTable Roll_table3(int offset)
+        private DataTable Roll_card_number(int offset)
         {
-            MySqlCommand command = new MySqlCommand("SELECT * FROM table3 limit 50 offset @offset", SqlConnection);
+            MySqlCommand command = new MySqlCommand("SELECT * FROM card_number limit 50 offset @offset", SqlConnection);
             command.Parameters.AddWithValue("@offset", offset);
             command.ExecuteNonQuery();
             MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-            DataTable dt = new DataTable("table3");
+            DataTable dt = new DataTable("card_number");
             addapter.Fill(dt);
             SqlConnection.Close();
             return dt;
@@ -1726,9 +1726,9 @@ namespace Serv
             }
         }
 
-        private int Count_table1()
+        private int Count_address()
         {
-            MySqlCommand command = new MySqlCommand("SELECT COUNT(0) FROM table1", SqlConnection);
+            MySqlCommand command = new MySqlCommand("SELECT COUNT(0) FROM address", SqlConnection);
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
@@ -1745,9 +1745,9 @@ namespace Serv
             }
         }
 
-        private int Count_table2()
+        private int Count_company()
         {
-            MySqlCommand command = new MySqlCommand("SELECT COUNT(0) FROM table2", SqlConnection);
+            MySqlCommand command = new MySqlCommand("SELECT COUNT(0) FROM company", SqlConnection);
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
@@ -1764,9 +1764,9 @@ namespace Serv
             }
         }
 
-        private int Count_table3()
+        private int Count_card_number()
         {
-            MySqlCommand command = new MySqlCommand("SELECT COUNT(0) FROM table3", SqlConnection);
+            MySqlCommand command = new MySqlCommand("SELECT COUNT(0) FROM card_number", SqlConnection);
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {

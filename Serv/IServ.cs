@@ -38,11 +38,11 @@ namespace Serv
         [OperationContract]
         DataTable Take_table_salary(string token);
         [OperationContract]
-        DataTable Take_table_table1(string token);
+        DataTable Take_table_address(string token);
         [OperationContract]
-        DataTable Take_table_table2(string token);
+        DataTable Take_table_company(string token);
         [OperationContract]
-        DataTable Take_table_table3(string token);
+        DataTable Take_table_card_number(string token);
         [OperationContract]
         DataTable Take_rows_people();
         [OperationContract]
@@ -58,11 +58,11 @@ namespace Serv
         [OperationContract]
         DataTable Take_rows_salary();
         [OperationContract]
-        DataTable Take_rows_table1();
+        DataTable Take_rows_address();
         [OperationContract]
-        DataTable Take_rows_table2();
+        DataTable Take_rows_company();
         [OperationContract]
-        DataTable Take_rows_table3();
+        DataTable Take_rows_card_number();
         [OperationContract]
         char Update_table_people(string table, string name_set, string set, string where, string token);
         [OperationContract]
@@ -78,11 +78,11 @@ namespace Serv
         [OperationContract]
         char Update_table_salary(string table, string name_set, string set, string where, string token);
         [OperationContract]
-        char Update_table_table1(string table, string name_set, string set, string where, string token);
+        char Update_table_address(string table, string name_set, string set, string where, string token);
         [OperationContract]
-        char Update_table_table2(string table, string name_set, string set, string where, string token);
+        char Update_table_company(string table, string name_set, string set, string where, string token);
         [OperationContract]
-        char Update_table_table3(string table, string name_set, string set, string where, string token);
+        char Update_table_card_number(string table, string name_set, string set, string where, string token);
         [OperationContract]
         string Delete_table(string token);
         [OperationContract]

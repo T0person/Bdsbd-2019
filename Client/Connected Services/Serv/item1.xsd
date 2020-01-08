@@ -255,17 +255,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_table_table1">
+  <xs:element name="Take_table_address">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_table_table1Response">
+  <xs:element name="Take_table_addressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Take_table_table1Result" nillable="true">
+        <xs:element minOccurs="0" name="Take_table_addressResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -281,17 +281,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_table_table2">
+  <xs:element name="Take_table_company">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_table_table2Response">
+  <xs:element name="Take_table_companyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Take_table_table2Result" nillable="true">
+        <xs:element minOccurs="0" name="Take_table_companyResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -307,17 +307,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_table_table3">
+  <xs:element name="Take_table_card_number">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_table_table3Response">
+  <xs:element name="Take_table_card_numberResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Take_table_table3Result" nillable="true">
+        <xs:element minOccurs="0" name="Take_table_card_numberResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -501,15 +501,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_rows_table1">
+  <xs:element name="Take_rows_address">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_rows_table1Response">
+  <xs:element name="Take_rows_addressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Take_rows_table1Result" nillable="true">
+        <xs:element minOccurs="0" name="Take_rows_addressResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -525,15 +525,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_rows_table2">
+  <xs:element name="Take_rows_company">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_rows_table2Response">
+  <xs:element name="Take_rows_companyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Take_rows_table2Result" nillable="true">
+        <xs:element minOccurs="0" name="Take_rows_companyResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -549,15 +549,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_rows_table3">
+  <xs:element name="Take_rows_card_number">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="Take_rows_table3Response">
+  <xs:element name="Take_rows_card_numberResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Take_rows_table3Result" nillable="true">
+        <xs:element minOccurs="0" name="Take_rows_card_numberResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -699,7 +699,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Update_table_table1">
+  <xs:element name="Update_table_address">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="table" nillable="true" type="xs:string" />
@@ -710,14 +710,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Update_table_table1Response">
+  <xs:element name="Update_table_addressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Update_table_table1Result" type="q10:char" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Update_table_addressResult" type="q10:char" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Update_table_table2">
+  <xs:element name="Update_table_company">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="table" nillable="true" type="xs:string" />
@@ -728,14 +728,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Update_table_table2Response">
+  <xs:element name="Update_table_companyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Update_table_table2Result" type="q11:char" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Update_table_companyResult" type="q11:char" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Update_table_table3">
+  <xs:element name="Update_table_card_number">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="table" nillable="true" type="xs:string" />
@@ -746,10 +746,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Update_table_table3Response">
+  <xs:element name="Update_table_card_numberResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Update_table_table3Result" type="q12:char" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Update_table_card_numberResult" type="q12:char" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -73,7 +73,7 @@ namespace Client
                         }
                         q = client.Update_table_salary(Table_box.SelectedItem.ToString(), Row_box.SelectedItem.ToString(), Set_str.Text, Set_id.Text, Settings.Default["token"].ToString());
                         break;
-                    case "table1":
+                    case "address":
                         if (Row_box.SelectedItem.ToString() == "email")
                         {
                             if (Set_str.Text.IndexOf("@") == -1 || Set_str.Text.IndexOf("@") != Set_str.Text.LastIndexOf("@"))
@@ -90,9 +90,9 @@ namespace Client
                                 break;
                             }
                         }
-                        q = client.Update_table_table1(Table_box.SelectedItem.ToString(), Row_box.SelectedItem.ToString(), Set_str.Text, Set_id.Text, Settings.Default["token"].ToString());
+                        q = client.Update_table_address(Table_box.SelectedItem.ToString(), Row_box.SelectedItem.ToString(), Set_str.Text, Set_id.Text, Settings.Default["token"].ToString());
                         break;
-                    case "table2":
+                    case "company":
                         if (Row_box.SelectedItem.ToString() == "b_date")
                         {
                             if (!DateTime.TryParseExact(Set_str.Text, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime formattedDate))
@@ -101,9 +101,9 @@ namespace Client
                                 break;
                             }
                         }
-                        q = client.Update_table_table2(Table_box.SelectedItem.ToString(), Row_box.SelectedItem.ToString(), Set_str.Text, Set_id.Text, Settings.Default["token"].ToString());
+                        q = client.Update_table_company(Table_box.SelectedItem.ToString(), Row_box.SelectedItem.ToString(), Set_str.Text, Set_id.Text, Settings.Default["token"].ToString());
                         break;
-                    case "table3":
+                    case "card_number":
                         if(Row_box.SelectedItem.ToString() == "card_number")
                         {
                             try
@@ -119,7 +119,7 @@ namespace Client
                                 break;
                             }
                         }
-                        q = client.Update_table_table3(Table_box.SelectedItem.ToString(), Row_box.SelectedItem.ToString(), Set_str.Text, Set_id.Text, Settings.Default["token"].ToString());
+                        q = client.Update_table_card_number(Table_box.SelectedItem.ToString(), Row_box.SelectedItem.ToString(), Set_str.Text, Set_id.Text, Settings.Default["token"].ToString());
                         break;
                 }
                 switch (q)
@@ -184,22 +184,22 @@ namespace Client
                         Row_box.Items.Add(client.Take_rows_salary().Rows[i][0].ToString());
                     }
                     break;
-                case "table1":
-                    for (int i = 0; i < client.Take_rows_table1().Rows.Count; i++)
+                case "address":
+                    for (int i = 0; i < client.Take_rows_address().Rows.Count; i++)
                     {
-                        Row_box.Items.Add(client.Take_rows_table1().Rows[i][0].ToString());
+                        Row_box.Items.Add(client.Take_rows_address().Rows[i][0].ToString());
                     }
                     break;
-                case "table2":
-                    for (int i = 0; i < client.Take_rows_table2().Rows.Count; i++)
+                case "company":
+                    for (int i = 0; i < client.Take_rows_company().Rows.Count; i++)
                     {
-                        Row_box.Items.Add(client.Take_rows_table2().Rows[i][0].ToString());
+                        Row_box.Items.Add(client.Take_rows_company().Rows[i][0].ToString());
                     }
                     break;
-                case "table3":
-                    for (int i = 0; i < client.Take_rows_table3().Rows.Count; i++)
+                case "card_number":
+                    for (int i = 0; i < client.Take_rows_card_number().Rows.Count; i++)
                     {
-                        Row_box.Items.Add(client.Take_rows_table3().Rows[i][0].ToString());
+                        Row_box.Items.Add(client.Take_rows_card_number().Rows[i][0].ToString());
                     }
                     break;
             }

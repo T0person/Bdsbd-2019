@@ -19,6 +19,7 @@ namespace Client
             //Settings.Default["role"] = null;
             //Settings.Default["token"] = null;
             //Settings.Default.Save();
+            Application.Run(new Staff());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var client = new Serv.ServClient("NetTcpBinding_IServ");
