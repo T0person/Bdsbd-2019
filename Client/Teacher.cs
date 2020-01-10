@@ -42,7 +42,7 @@ namespace Client
 
         private void My_fac_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = client.Take_table_faculties(Settings.Default["token"].ToString());
+            dataGridView1.DataSource = client.Plus_Mun50("faculties", 0, Settings.Default["token"].ToString());
             offset = 0;
             max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
 
@@ -50,7 +50,7 @@ namespace Client
 
         private void My_spec_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = client.Take_table_specials(Settings.Default["token"].ToString());
+            dataGridView1.DataSource = client.Plus_Mun50("specials", 0, Settings.Default["token"].ToString());
             offset = 0;
             max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
         }

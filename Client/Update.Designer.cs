@@ -93,10 +93,10 @@
             // 
             // Set_id
             // 
-            this.Set_id.Location = new System.Drawing.Point(281, 64);
+            this.Set_id.Location = new System.Drawing.Point(203, 60);
             this.Set_id.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Set_id.Name = "Set_id";
-            this.Set_id.Size = new System.Drawing.Size(70, 26);
+            this.Set_id.Size = new System.Drawing.Size(240, 26);
             this.Set_id.TabIndex = 15;
             this.Set_id.TextChanged += new System.EventHandler(this.Set_id_TextChanged);
             // 
@@ -148,7 +148,7 @@
             "address",
             "company",
             "card_number"});
-            this.Table_box.Location = new System.Drawing.Point(24, 62);
+            this.Table_box.Location = new System.Drawing.Point(25, 60);
             this.Table_box.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Table_box.Name = "Table_box";
             this.Table_box.Size = new System.Drawing.Size(148, 28);

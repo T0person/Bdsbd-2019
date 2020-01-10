@@ -24,26 +24,6 @@ namespace Serv
         [OperationContract]
         string Sal_find_stud(string token);
         [OperationContract]
-        DataTable Take_table_people(string token);
-        [OperationContract]
-        DataTable Take_table_students(string token);
-        [OperationContract]
-        DataTable Take_table_teachers(string token);
-        [OperationContract]
-        DataTable Take_table_staff(string token);
-        [OperationContract]
-        DataTable Take_table_specials(string token);
-        [OperationContract]
-        DataTable Take_table_faculties(string token);
-        [OperationContract]
-        DataTable Take_table_salary(string token);
-        [OperationContract]
-        DataTable Take_table_address(string token);
-        [OperationContract]
-        DataTable Take_table_company(string token);
-        [OperationContract]
-        DataTable Take_table_card_number(string token);
-        [OperationContract]
         DataTable Take_rows_people();
         [OperationContract]
         DataTable Take_rows_students();
@@ -58,9 +38,15 @@ namespace Serv
         [OperationContract]
         DataTable Take_rows_salary();
         [OperationContract]
+        char Create_people(string fio, string password, string address, string email, string registration, string b_date, string about, string phone, string company, string card_number, string role, string spec_name, string fac_name, string salary, string token);
+        [OperationContract]
         DataTable Take_rows_address();
         [OperationContract]
         DataTable Take_rows_company();
+        [OperationContract]
+        string[] Analysis_spec_fac(string name_spec, string name_fac);
+        [OperationContract]
+        void Find_Created(string id, string table);
         [OperationContract]
         DataTable Take_rows_card_number();
         [OperationContract]

@@ -45,66 +45,6 @@ namespace Client.Serv {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Sal_find_stud", ReplyAction="http://tempuri.org/IServ/Sal_find_studResponse")]
         System.Threading.Tasks.Task<string> Sal_find_studAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_people", ReplyAction="http://tempuri.org/IServ/Take_table_peopleResponse")]
-        System.Data.DataTable Take_table_people(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_people", ReplyAction="http://tempuri.org/IServ/Take_table_peopleResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_peopleAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_students", ReplyAction="http://tempuri.org/IServ/Take_table_studentsResponse")]
-        System.Data.DataTable Take_table_students(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_students", ReplyAction="http://tempuri.org/IServ/Take_table_studentsResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_studentsAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_teachers", ReplyAction="http://tempuri.org/IServ/Take_table_teachersResponse")]
-        System.Data.DataTable Take_table_teachers(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_teachers", ReplyAction="http://tempuri.org/IServ/Take_table_teachersResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_teachersAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_staff", ReplyAction="http://tempuri.org/IServ/Take_table_staffResponse")]
-        System.Data.DataTable Take_table_staff(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_staff", ReplyAction="http://tempuri.org/IServ/Take_table_staffResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_staffAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_specials", ReplyAction="http://tempuri.org/IServ/Take_table_specialsResponse")]
-        System.Data.DataTable Take_table_specials(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_specials", ReplyAction="http://tempuri.org/IServ/Take_table_specialsResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_specialsAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_faculties", ReplyAction="http://tempuri.org/IServ/Take_table_facultiesResponse")]
-        System.Data.DataTable Take_table_faculties(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_faculties", ReplyAction="http://tempuri.org/IServ/Take_table_facultiesResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_facultiesAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_salary", ReplyAction="http://tempuri.org/IServ/Take_table_salaryResponse")]
-        System.Data.DataTable Take_table_salary(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_salary", ReplyAction="http://tempuri.org/IServ/Take_table_salaryResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_salaryAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_address", ReplyAction="http://tempuri.org/IServ/Take_table_addressResponse")]
-        System.Data.DataTable Take_table_address(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_address", ReplyAction="http://tempuri.org/IServ/Take_table_addressResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_addressAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_company", ReplyAction="http://tempuri.org/IServ/Take_table_companyResponse")]
-        System.Data.DataTable Take_table_company(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_company", ReplyAction="http://tempuri.org/IServ/Take_table_companyResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_companyAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_card_number", ReplyAction="http://tempuri.org/IServ/Take_table_card_numberResponse")]
-        System.Data.DataTable Take_table_card_number(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_table_card_number", ReplyAction="http://tempuri.org/IServ/Take_table_card_numberResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Take_table_card_numberAsync(string token);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_people", ReplyAction="http://tempuri.org/IServ/Take_rows_peopleResponse")]
         System.Data.DataTable Take_rows_people();
         
@@ -147,6 +87,12 @@ namespace Client.Serv {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_salary", ReplyAction="http://tempuri.org/IServ/Take_rows_salaryResponse")]
         System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_salaryAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Create_people", ReplyAction="http://tempuri.org/IServ/Create_peopleResponse")]
+        char Create_people(string fio, string password, string address, string email, string registration, string b_date, string about, string phone, string company, string card_number, string role, string spec_name, string fac_name, string salary, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Create_people", ReplyAction="http://tempuri.org/IServ/Create_peopleResponse")]
+        System.Threading.Tasks.Task<char> Create_peopleAsync(string fio, string password, string address, string email, string registration, string b_date, string about, string phone, string company, string card_number, string role, string spec_name, string fac_name, string salary, string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_address", ReplyAction="http://tempuri.org/IServ/Take_rows_addressResponse")]
         System.Data.DataTable Take_rows_address();
         
@@ -158,6 +104,18 @@ namespace Client.Serv {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_company", ReplyAction="http://tempuri.org/IServ/Take_rows_companyResponse")]
         System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_companyAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Analysis_spec_fac", ReplyAction="http://tempuri.org/IServ/Analysis_spec_facResponse")]
+        string[] Analysis_spec_fac(string name_spec, string name_fac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Analysis_spec_fac", ReplyAction="http://tempuri.org/IServ/Analysis_spec_facResponse")]
+        System.Threading.Tasks.Task<string[]> Analysis_spec_facAsync(string name_spec, string name_fac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Find_Created", ReplyAction="http://tempuri.org/IServ/Find_CreatedResponse")]
+        void Find_Created(string id, string table);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Find_Created", ReplyAction="http://tempuri.org/IServ/Find_CreatedResponse")]
+        System.Threading.Tasks.Task Find_CreatedAsync(string id, string table);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServ/Take_rows_card_number", ReplyAction="http://tempuri.org/IServ/Take_rows_card_numberResponse")]
         System.Data.DataTable Take_rows_card_number();
@@ -329,86 +287,6 @@ namespace Client.Serv {
             return base.Channel.Sal_find_studAsync(token);
         }
         
-        public System.Data.DataTable Take_table_people(string token) {
-            return base.Channel.Take_table_people(token);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_peopleAsync(string token) {
-            return base.Channel.Take_table_peopleAsync(token);
-        }
-        
-        public System.Data.DataTable Take_table_students(string token) {
-            return base.Channel.Take_table_students(token);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_studentsAsync(string token) {
-            return base.Channel.Take_table_studentsAsync(token);
-        }
-        
-        public System.Data.DataTable Take_table_teachers(string token) {
-            return base.Channel.Take_table_teachers(token);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_teachersAsync(string token) {
-            return base.Channel.Take_table_teachersAsync(token);
-        }
-        
-        public System.Data.DataTable Take_table_staff(string token) {
-            return base.Channel.Take_table_staff(token);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_staffAsync(string token) {
-            return base.Channel.Take_table_staffAsync(token);
-        }
-        
-        public System.Data.DataTable Take_table_specials(string token) {
-            return base.Channel.Take_table_specials(token);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_specialsAsync(string token) {
-            return base.Channel.Take_table_specialsAsync(token);
-        }
-        
-        public System.Data.DataTable Take_table_faculties(string token) {
-            return base.Channel.Take_table_faculties(token);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_facultiesAsync(string token) {
-            return base.Channel.Take_table_facultiesAsync(token);
-        }
-        
-        public System.Data.DataTable Take_table_salary(string token) {
-            return base.Channel.Take_table_salary(token);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_salaryAsync(string token) {
-            return base.Channel.Take_table_salaryAsync(token);
-        }
-        
-        public System.Data.DataTable Take_table_address(string token) {
-            return base.Channel.Take_table_address(token);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_addressAsync(string token) {
-            return base.Channel.Take_table_addressAsync(token);
-        }
-        
-        public System.Data.DataTable Take_table_company(string token) {
-            return base.Channel.Take_table_company(token);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_companyAsync(string token) {
-            return base.Channel.Take_table_companyAsync(token);
-        }
-        
-        public System.Data.DataTable Take_table_card_number(string token) {
-            return base.Channel.Take_table_card_number(token);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataTable> Take_table_card_numberAsync(string token) {
-            return base.Channel.Take_table_card_numberAsync(token);
-        }
-        
         public System.Data.DataTable Take_rows_people() {
             return base.Channel.Take_rows_people();
         }
@@ -465,6 +343,14 @@ namespace Client.Serv {
             return base.Channel.Take_rows_salaryAsync();
         }
         
+        public char Create_people(string fio, string password, string address, string email, string registration, string b_date, string about, string phone, string company, string card_number, string role, string spec_name, string fac_name, string salary, string token) {
+            return base.Channel.Create_people(fio, password, address, email, registration, b_date, about, phone, company, card_number, role, spec_name, fac_name, salary, token);
+        }
+        
+        public System.Threading.Tasks.Task<char> Create_peopleAsync(string fio, string password, string address, string email, string registration, string b_date, string about, string phone, string company, string card_number, string role, string spec_name, string fac_name, string salary, string token) {
+            return base.Channel.Create_peopleAsync(fio, password, address, email, registration, b_date, about, phone, company, card_number, role, spec_name, fac_name, salary, token);
+        }
+        
         public System.Data.DataTable Take_rows_address() {
             return base.Channel.Take_rows_address();
         }
@@ -479,6 +365,22 @@ namespace Client.Serv {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> Take_rows_companyAsync() {
             return base.Channel.Take_rows_companyAsync();
+        }
+        
+        public string[] Analysis_spec_fac(string name_spec, string name_fac) {
+            return base.Channel.Analysis_spec_fac(name_spec, name_fac);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> Analysis_spec_facAsync(string name_spec, string name_fac) {
+            return base.Channel.Analysis_spec_facAsync(name_spec, name_fac);
+        }
+        
+        public void Find_Created(string id, string table) {
+            base.Channel.Find_Created(id, table);
+        }
+        
+        public System.Threading.Tasks.Task Find_CreatedAsync(string id, string table) {
+            return base.Channel.Find_CreatedAsync(id, table);
         }
         
         public System.Data.DataTable Take_rows_card_number() {

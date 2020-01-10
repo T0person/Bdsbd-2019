@@ -15,14 +15,10 @@ namespace Client
         [STAThread]
         static void Main()
         {
-            //Settings.Default["id"] = null;
-            //Settings.Default["role"] = null;
-            //Settings.Default["token"] = null;
-            //Settings.Default.Save();
-            Application.Run(new Staff());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var client = new Serv.ServClient("NetTcpBinding_IServ");
+            client.Find_Created(Settings.Default["created_id"].ToString(), Settings.Default["created_table"].ToString());
             var role = client.LoginForm_load(Settings.Default["token"].ToString());
             if (role == '1')
                 Application.Run(new Student());

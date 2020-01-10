@@ -111,3 +111,6 @@ J:\Kurs\Client\bin\Debug\Client.exe.CodeAnalysisLog.xml
 J:\Kurs\Client\bin\Debug\Client.exe.lastcodeanalysissucceeded
 G:\Kurs\Client\bin\Debug\Client.exe.CodeAnalysisLog.xml
 G:\Kurs\Client\bin\Debug\Client.exe.lastcodeanalysissucceeded
+H:\Kurs\Client\bin\Debug\Client.exe.CodeAnalysisLog.xml
+H:\Kurs\Client\bin\Debug\Client.exe.lastcodeanalysissucceeded
+G:\Kurs\Client\obj\Debug\Client.Create_people.resources

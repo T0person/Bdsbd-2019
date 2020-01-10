@@ -82,6 +82,20 @@ namespace Client
                                 break;
                             }
                         }
+                        else if (Row_box.SelectedItem.ToString() == "phoneNumber")
+                        {
+                            try
+                            {
+                                string pattern = @"(\d([(])\d{3}([)])\d{3}({-})\d{2}([-])\d{2})";
+                                Regex regex = new Regex(pattern);
+                                MatchCollection matchCollection = regex.Matches(Set_str.Text);
+                                var f = matchCollection[0].Value;
+                            }
+                            catch (Exception)
+                            {
+                                q = '1';
+                            }
+                        }
                         else if (Row_box.SelectedItem.ToString() == "registration")
                         {
                             if (!DateTime.TryParseExact(Set_str.Text, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime formattedDate))
@@ -125,6 +139,7 @@ namespace Client
                 switch (q)
                 {
                     case '1':
+                        Update_button.Visible = false;
                         MessageBox.Show("Все прошло удачно!");
                         break;
                     case '2':

@@ -25,49 +25,49 @@ namespace Client
 
         private void All_button_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = client.Take_table_people(Settings.Default["token"].ToString());
+            dataGridView1.DataSource = client.Plus_Mun50("people",0, Settings.Default["token"].ToString());
             offset = 0;
             max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
         }
 
         private void Students_button_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = client.Take_table_students(Settings.Default["token"].ToString());
+            dataGridView1.DataSource = client.Plus_Mun50("students", 0, Settings.Default["token"].ToString());
             offset = 0;
             max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
         }
 
         private void Teachers_button_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = client.Take_table_teachers(Settings.Default["token"].ToString());
+            dataGridView1.DataSource = client.Plus_Mun50("teachers", 0, Settings.Default["token"].ToString());
             offset = 0;
             max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
         }
 
         private void Staff_button_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = client.Take_table_staff(Settings.Default["token"].ToString());
+            dataGridView1.DataSource = client.Plus_Mun50("staff", 0, Settings.Default["token"].ToString());
             offset = 0;
             max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
         }
 
         private void Fac_button_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = client.Take_table_faculties(Settings.Default["token"].ToString());
+            dataGridView1.DataSource = client.Plus_Mun50("faculties", 0, Settings.Default["token"].ToString());
             offset = 0;
             max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
         }
 
         private void Spec_button_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = client.Take_table_specials(Settings.Default["token"].ToString());
+            dataGridView1.DataSource = client.Plus_Mun50("specials", 0, Settings.Default["token"].ToString());
             offset = 0;
             max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
         }
 
         private void Sal_button_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = client.Take_table_salary(Settings.Default["token"].ToString());
+            dataGridView1.DataSource = client.Plus_Mun50("salary", 0, Settings.Default["token"].ToString());
             offset = 0;
             max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
             Top_Sal.Text = "Монеток всего: " + client.Top_Sal(Settings.Default["token"].ToString());
@@ -111,7 +111,10 @@ namespace Client
         {
             if(offset > 0)
                 offset -= 50;
-            dataGridView1.DataSource = client.Plus_Mun50(dataGridView1.DataSource.ToString(), offset, Settings.Default["token"].ToString());
+            if (dataGridView1.DataSource == null)
+                MessageBox.Show("Рано тыкаешь!!!");
+            else
+                dataGridView1.DataSource = client.Plus_Mun50(dataGridView1.DataSource.ToString(), offset, Settings.Default["token"].ToString());
         }
 
         private void Plus50_Click(object sender, EventArgs e)
@@ -119,19 +122,22 @@ namespace Client
             offset += 50;
             if (offset > max)
                 offset = max - offset;
-            dataGridView1.DataSource = client.Plus_Mun50(dataGridView1.DataSource.ToString(), offset, Settings.Default["token"].ToString());
+            if (dataGridView1.DataSource == null)
+                MessageBox.Show("Рано тыкаешь!!!");
+            else
+                dataGridView1.DataSource = client.Plus_Mun50(dataGridView1.DataSource.ToString(), offset, Settings.Default["token"].ToString());
         }
 
         private void Address_button_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = client.Take_table_address(Settings.Default["token"].ToString());
+            dataGridView1.DataSource = client.Plus_Mun50("address", 0, Settings.Default["token"].ToString());
             offset = 0;
             max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
         }
 
         private void Company_button_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = client.Take_table_company(Settings.Default["token"].ToString());
+            dataGridView1.DataSource = client.Plus_Mun50("company", 0, Settings.Default["token"].ToString());
             offset = 0;
             max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
         }
@@ -143,7 +149,25 @@ namespace Client
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void Create_Click(object sender, EventArgs e)
+        {
             Hide();
+            Create_people nextform = new Create_people();
+            nextform.Show();
+        }
+
+        private void Card_button_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = client.Plus_Mun50("card_number", 0, Settings.Default["token"].ToString());
+            offset = 0;
+            max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
+        }
+    }
+}
+/* Hide();
             MySqlConnection SqlConnection = new MySqlConnection("server=localhost; port=3306;username=root;password=root;database=kurs");
             SqlConnection.Open();
             string id = "";
@@ -276,14 +300,4 @@ namespace Client
                 salary.ExecuteNonQuery();
             }
             Application.Exit();
-
-        }
-
-        private void Card_button_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = client.Take_table_card_number(Settings.Default["token"].ToString());
-            offset = 0;
-            max = client.Count_table(dataGridView1.DataSource.ToString(), Settings.Default["token"].ToString());
-        }
-    }
-}
+*/

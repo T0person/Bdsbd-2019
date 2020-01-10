@@ -19,6 +19,7 @@ namespace Serv
         //---Логин
         public string[] LoginForm(string login, string password)
         {
+            SqlConnection.Close();
             SqlConnection.Open();
             string token;
             string[] str = new string[3];
@@ -61,7 +62,7 @@ namespace Serv
                     role = Choice_staff(token);
                 if (role == '0')
                 {
-                    for(int i = 0; i < str.Length; i++)
+                    for (int i = 0; i < str.Length; i++)
                     {
                         str[i] = "-1";
                     }
@@ -86,7 +87,6 @@ namespace Serv
         //---Логин автоматом
         public char LoginForm_load(string token)
         {
-            SqlConnection.Open();
             var id = Select_Online(token);
             if (id != null)
             {
@@ -194,195 +194,203 @@ namespace Serv
             }
         }
 
-        //---Получить таблицы
-        public DataTable Take_table_people(string token)
+        //---Анализ специальности
+        public string[] Analysis_spec_fac(string name_spec, string name_fac)
         {
-            SqlConnection.Open();
-            if (Select_Online(token) != null)
+            string[] str = new string[2];
+            try
             {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM people limit 50", SqlConnection);
-                MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("people");
-                addapter.Fill(dt);
-                SqlConnection.Close();
-                return dt;
+                if(SqlConnection.State != ConnectionState.Open)
+                    SqlConnection.Open();
+                MySqlCommand command = new MySqlCommand("SELECT id FROM specials WHERE special_name = @name_spec", SqlConnection);
+                command.Parameters.AddWithValue("@name_spec", name_spec);
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    name_spec = reader["id"].ToString();
+                    reader.Close();
+                    command = new MySqlCommand("SELECT id FROM faculties WHERE faculty_name = @name_fac", SqlConnection);
+                    command.Parameters.AddWithValue("@name_fac", name_fac);
+                    reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        name_fac = reader["id"].ToString();
+                        reader.Close();
+                        str[0] = name_spec;
+                        str[1] = name_fac;
+                        return str;
+                    }
+                    else
+                    {
+                        str[0] = null;
+                        str[1] = null;
+                        return str;
+                    }
+                }
+                else
+                {
+                    str[0] = null;
+                    str[1] = null;
+                    return str;
+                }
             }
-            else
+            catch (Exception)
             {
-                SqlConnection.Close();
-                return null;
+                str[0] = null;
+                str[1] = null;
+                return str;
             }
         }
 
-        public DataTable Take_table_students(string token)
+        //---Добавить пользователя
+        public char Create_people(string fio, string password, string address, string email, string registration, string b_date, string about, string phone, string company, string card_number, string role, string spec_name, string fac_name, string salary, string token)
         {
-            SqlConnection.Open();
-            if (Select_Online(token) != null)
+            string id;
+            if(Select_Online(token) != null)
             {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM students limit 50", SqlConnection);
-                MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("students");
-                addapter.Fill(dt);
-                SqlConnection.Close();
-                return dt;
+                MySqlCommand command = new MySqlCommand("SELECT fio FROM people WHERE fio = @name", SqlConnection);
+                command.Parameters.AddWithValue("@name", fio);
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    reader.Close();
+                    return '1';
+                }
+                else
+                {
+                    reader.Close();
+                    using (SHA1 shaM = new SHA1Managed())
+                    {
+                        byte[] hash2 = shaM.ComputeHash(Encoding.UTF8.GetBytes(fio+address));
+                        id= BitConverter.ToString(hash2).Replace("-", "").ToLower();
+                    }
+                    command = new MySqlCommand("INSERT INTO people VALUE(@id,@fio,MD5(@password))", SqlConnection);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@fio", fio);
+                    command.Parameters.AddWithValue("@password", password);
+                    command.ExecuteNonQuery();
+                    command = new MySqlCommand("INSERT INTO address VALUE(@id,@address,@email,@registration)", SqlConnection);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@address", address);
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@registration", registration);
+                    command.ExecuteNonQuery();
+                    command = new MySqlCommand("INSERT INTO company VALUE(@id,@b_date,@about,@phoneNumber,@company)", SqlConnection);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@b_date", b_date);
+                    command.Parameters.AddWithValue("@about", about);
+                    command.Parameters.AddWithValue("@phoneNumber", phone);
+                    command.Parameters.AddWithValue("@company", company);
+                    command.ExecuteNonQuery();
+                    command = new MySqlCommand("INSERT INTO card_number VALUE(@id,@card_number)", SqlConnection);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@card_number", card_number);
+                    command.ExecuteNonQuery();
+                    switch (role)
+                    {
+                        case "students":
+                            Create_students(id, spec_name, fac_name);
+                            break;
+                        case "teachers":
+                            Create_teachers(id, spec_name, fac_name);
+                            break;
+                        case "staff":
+                            Create_staff(id, spec_name);
+                            break;
+                    }
+                    return '2';
+                }
             }
             else
             {
                 SqlConnection.Close();
-                return null;
+                return '0';
             }
         }
 
-        public DataTable Take_table_teachers(string token)
+        //---Найти созданного
+        public void Find_Created(string id, string table)
         {
             SqlConnection.Open();
-            if (Select_Online(token) != null)
+            int q=0;
+            using (SHA1 shaM = new SHA1Managed())
             {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM teachers limit 50", SqlConnection);
-                MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("teachers");
-                addapter.Fill(dt);
-                SqlConnection.Close();
-                return dt;
+                byte[] hash2 = shaM.ComputeHash(Encoding.UTF8.GetBytes(id));
+                id = BitConverter.ToString(hash2).Replace("-", "").ToLower();
+            }
+            MySqlCommand command = new MySqlCommand("SELECT id FROM people WHERE id = @id", SqlConnection);
+            command.Parameters.AddWithValue("@id", id);
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                reader.Close();
+                command = new MySqlCommand("SELECT id FROM address WHERE id = @id", SqlConnection);
+                command.Parameters.AddWithValue("@id", id);
+                reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    reader.Close();
+                    command = new MySqlCommand("SELECT id FROM company WHERE id = @id", SqlConnection);
+                    command.Parameters.AddWithValue("@id", id);
+                    reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        reader.Close();
+                        command = new MySqlCommand("SELECT id FROM card_number WHERE id = @id", SqlConnection);
+                        command.Parameters.AddWithValue("@id", id);
+                        reader = command.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            reader.Close();
+                            switch (table)
+                            {
+                                case "students":
+                                    command = new MySqlCommand("SELECT id FROM students WHERE id = @id", SqlConnection);
+                                    command.Parameters.AddWithValue("@id", id);
+                                    reader = command.ExecuteReader();
+                                    if (reader.Read())
+                                        q = 1;
+                                    else
+                                        q = 0;
+                                    break;
+                                case "teachers":
+                                    command = new MySqlCommand("SELECT id FROM teachers WHERE id = @id", SqlConnection);
+                                    command.Parameters.AddWithValue("@id", id);
+                                    reader = command.ExecuteReader();
+                                    if (reader.Read())
+                                        q = 1;
+                                    else
+                                        q = 0;
+                                    break;
+                                case "staff":
+                                    command = new MySqlCommand("SELECT id FROM staff WHERE id = @id", SqlConnection);
+                                    command.Parameters.AddWithValue("@id", id);
+                                    reader = command.ExecuteReader();
+                                    if (reader.Read())
+                                        q = 1;
+                                    else
+                                        q = 0;
+                                    break;
+                            }
+                        }
+                        else
+                            q = 0;
+                    }
+                    else
+                        q = 0;
+                }
+                else
+                    q = 0;
             }
             else
+                q = 2;
+            if(q == 0)
             {
-                SqlConnection.Close();
-                return null;
+                command = new MySqlCommand("DELETE FROM people WHERE id = @id", SqlConnection);
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
             }
-        }
-
-        public DataTable Take_table_staff(string token)
-        {
-            SqlConnection.Open();
-            if (Select_Online(token) != null)
-            {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM staff limit 50", SqlConnection);
-                MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("staff");
-                addapter.Fill(dt);
-                SqlConnection.Close();
-                return dt;
-            }
-            else
-            {
-                SqlConnection.Close();
-                return null;
-            }
-        }
-
-        public DataTable Take_table_specials(string token)
-        {
-            SqlConnection.Open();
-            if (Select_Online(token) != null)
-            {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM specials limit 50", SqlConnection);
-                MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("specials");
-                addapter.Fill(dt);
-                SqlConnection.Close();
-                return dt;
-            }
-            else
-            {
-                SqlConnection.Close();
-                return null;
-            }
-        }
-
-        public DataTable Take_table_faculties(string token)
-        {
-            SqlConnection.Open();
-            if (Select_Online(token) != null)
-            {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM faculties limit 50", SqlConnection);
-                MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("faculties");
-                addapter.Fill(dt);
-                SqlConnection.Close();
-                return dt;
-            }
-            else
-            {
-                SqlConnection.Close();
-                return null;
-            }
-        }
-
-        public DataTable Take_table_salary(string token)
-        {
-            SqlConnection.Open();
-            if (Select_Online(token) != null)
-            {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM salary limit 50", SqlConnection);
-                MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("salary");
-                addapter.Fill(dt);
-                SqlConnection.Close();
-                return dt;
-            }
-            else
-            {
-                SqlConnection.Close();
-                return null;
-            }
-        }
-
-        public DataTable Take_table_address(string token)
-        {
-            SqlConnection.Open();
-            if (Select_Online(token) != null)
-            {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM address limit 50", SqlConnection);
-                MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("address");
-                addapter.Fill(dt);
-                SqlConnection.Close();
-                return dt;
-            }
-            else
-            {
-                SqlConnection.Close();
-                return null;
-            }
-        }
-
-        public DataTable Take_table_company(string token)
-        {
-            SqlConnection.Open();
-            if (Select_Online(token) != null)
-            {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM company limit 50", SqlConnection);
-                MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("company");
-                addapter.Fill(dt);
-                SqlConnection.Close();
-                return dt;
-            }
-            else
-            {
-                SqlConnection.Close();
-                return null;
-            }
-        }
-
-        public DataTable Take_table_card_number(string token)
-        {
-            SqlConnection.Open();
-            if (Select_Online(token) != null)
-            {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM card_number limit 50", SqlConnection);
-                MySqlDataAdapter addapter = new MySqlDataAdapter(command);
-                DataTable dt = new DataTable("card_number");
-                addapter.Fill(dt);
-                SqlConnection.Close();
-                return dt;
-            }
-            else
-            {
-                SqlConnection.Close();
-                return null;
-            }
+            reader.Close();
         }
 
         //---Получить название строк
@@ -1781,6 +1789,33 @@ namespace Serv
                 reader.Close();
                 return 0;
             }
+        }
+
+        //---Добавить пользователя
+        private void Create_students(string id, string id_special, string id_faculty)
+        {
+            MySqlCommand command = new MySqlCommand("INSERT INTO students VALUE(@id,@id_special,@id_faculty)", SqlConnection);
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@id_special", id_special);
+            command.Parameters.AddWithValue("@id_faculty", id_faculty);
+            command.ExecuteNonQuery();
+            
+        }
+
+        private void Create_teachers(string id, string id_special, string id_faculty)
+        {
+            MySqlCommand command = new MySqlCommand("INSERT INTO teachers VALUE(@id,@id_special,@id_faculty)", SqlConnection);
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@id_special", id_special);
+            command.Parameters.AddWithValue("@id_faculty", id_faculty);
+            command.ExecuteNonQuery();
+        }
+        private void Create_staff(string id, string job_name)
+        {
+            MySqlCommand command = new MySqlCommand("INSERT INTO staff VALUE(@id,@job_name)", SqlConnection);
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@job_name", job_name);
+            command.ExecuteNonQuery();
         }
     }
 }
