@@ -57,5 +57,10 @@ namespace Client
         {
 
         }
+
+        private void Set_id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

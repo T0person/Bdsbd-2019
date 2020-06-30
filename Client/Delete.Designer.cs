@@ -51,6 +51,7 @@
             this.Set_id.Name = "Set_id";
             this.Set_id.Size = new System.Drawing.Size(70, 26);
             this.Set_id.TabIndex = 16;
+            this.Set_id.TextChanged += new System.EventHandler(this.Set_id_TextChanged);
             // 
             // Take_id
             // 
